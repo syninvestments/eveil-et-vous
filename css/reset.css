@@ -1,0 +1,202 @@
+/* Reset CSS moderne */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+/* Remove list styles on ul, ol elements */
+ul[class],
+ol[class] {
+    list-style: none;
+    padding: 0;
+}
+
+/* Set core root defaults */
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+video,
+canvas,
+svg {
+    max-width: 100%;
+    display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Suppression des styles par défaut des liens */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Amélioration de l'accessibilité des liens au focus */
+a:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Style du texte sélectionné */
+::selection {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Suppression des marges sur les éléments de formulaire */
+input,
+button,
+textarea,
+select {
+    margin: 0;
+}
+
+/* Style de base des boutons */
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Style de base des tableaux */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Amélioration de l'accessibilité des champs de formulaire */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="url"],
+input[type="number"],
+textarea {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+/* Suppression du style par défaut des listes */
+ul,
+ol {
+    list-style: none;
+}
+
+/* Amélioration de la lisibilité des articles */
+article > * + * {
+    margin-top: 1em;
+}
+
+/* Style de base des figures */
+figure {
+    display: block;
+}
+
+/* Amélioration de l'accessibilité des iframes */
+iframe {
+    border: 0;
+}
+
+/* Suppression des marges des éléments blockquote */
+blockquote,
+q {
+    quotes: none;
+}
+
+/* Amélioration de la lisibilité des abréviations */
+abbr[title] {
+    border-bottom: none;
+    text-decoration: underline;
+    text-decoration: underline dotted;
+}
+
+/* Style de base des éléments strong et b */
+b,
+strong {
+    font-weight: bolder;
+}
+
+/* Style de base des éléments small */
+small {
+    font-size: 80%;
+}
+
+/* Style de base des éléments sub et sup */
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+sup {
+    top: -0.5em;
+}
+
+/* Amélioration de la lisibilité des éléments pre */
+pre {
+    overflow: auto;
+    -ms-overflow-style: scrollbar;
+}

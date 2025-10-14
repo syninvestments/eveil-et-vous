@@ -1,0 +1,213 @@
+/* Styles pour la page Séjours */
+
+.stays-info {
+    padding: var(--spacing-2xl) 0;
+}
+
+/* Feature Cards */
+.stay-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-2xl);
+}
+
+.feature-card {
+    background: var(--bg-color);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition-smooth);
+}
+
+.feature-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--box-shadow-hover);
+}
+
+.feature-card i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-md);
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover i {
+    transform: scale(1.1);
+}
+
+.feature-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    color: var(--heading-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+.feature-card p {
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+/* Stay Description */
+.stay-description {
+    max-width: 800px;
+    margin: 0 auto var(--spacing-2xl);
+    text-align: center;
+}
+
+.stay-description h2 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    color: var(--heading-color);
+    margin-bottom: var(--spacing-lg);
+}
+
+.stay-description p {
+    color: var(--text-color);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: var(--spacing-lg);
+}
+
+.program-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+    text-align: left;
+    margin-top: var(--spacing-lg);
+}
+
+.program-list li {
+    padding-left: var(--spacing-md);
+    position: relative;
+    color: var(--text-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+.program-list li::before {
+    content: "•";
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* Pricing Section */
+.stay-pricing {
+    background: var(--bg-alt-color);
+    padding: var(--spacing-2xl) 0;
+    text-align: center;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    max-width: 1000px;
+    margin: var(--spacing-xl) auto 0;
+}
+
+.pricing-card {
+    background: var(--bg-color);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--box-shadow);
+    transition: var(--transition-smooth);
+    position: relative;
+    overflow: hidden;
+}
+
+.pricing-card.featured {
+    transform: scale(1.05);
+    border: 2px solid var(--primary-color);
+}
+
+.pricing-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--box-shadow-hover);
+}
+
+.pricing-card.featured:hover {
+    transform: translateY(-5px) scale(1.05);
+}
+
+.pricing-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--heading-color);
+    margin-bottom: var(--spacing-md);
+}
+
+.price {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    font-weight: 700;
+    margin-bottom: var(--spacing-lg);
+}
+
+.price span {
+    font-size: 1rem;
+    color: var(--text-color);
+    font-weight: normal;
+}
+
+.pricing-card ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: var(--spacing-xl);
+    text-align: left;
+}
+
+.pricing-card ul li {
+    padding-left: var(--spacing-md);
+    position: relative;
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-color);
+}
+
+.pricing-card ul li::before {
+    content: "✓";
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+}
+
+/* Testimonials Section */
+.testimonials {
+    padding: var(--spacing-2xl) 0;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-xl);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .pricing-card.featured {
+        transform: scale(1);
+    }
+
+    .pricing-card.featured:hover {
+        transform: translateY(-5px);
+    }
+}
+
+@media (max-width: 768px) {
+    .stay-description h2 {
+        font-size: 1.75rem;
+    }
+
+    .program-list {
+        grid-template-columns: 1fr;
+    }
+
+    .pricing-grid {
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

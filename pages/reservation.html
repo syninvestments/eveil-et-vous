@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réservation - Éveil & Vous</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/reservation.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="../index.html">Éveil & Vous</a>
+            </div>
+            <div class="nav-links">
+                <a href="../pages/concept.html">Le Concept</a>
+                <a href="../pages/activites.html">Nos Activités</a>
+                <a href="../pages/sejours.html">Nos Séjours</a>
+                <a href="../pages/about.html">About</a>
+                <a href="../pages/contact.html">Contact</a>
+                <a href="../pages/reservation.html" class="cta-button">Réserver mon séjour</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="reservation-hero">
+            <h1>Réservez votre séjour</h1>
+            <p class="subtitle">Choisissez la formule qui vous convient</p>
+        </section>
+
+        <section class="booking-options">
+            <div class="options-grid">
+                <div class="option-card weekend">
+                    <h2>Week-end découverte</h2>
+                    <p class="duration">Du vendredi 18h au dimanche 16h</p>
+                    <ul class="features">
+                        <li>2 jours d'activités guidées</li>
+                        <li>Pension complète bio</li>
+                        <li>Kit de rituels à ramener</li>
+                        <li>Suivi post-séjour</li>
+                    </ul>
+                    <p class="price">À partir de 390€ par famille</p>
+                    <button class="select-option" data-option="weekend">Choisir cette option</button>
+                </div>
+
+                <div class="option-card week">
+                    <h2>Semaine complète</h2>
+                    <p class="duration">Du lundi 9h au vendredi 16h</p>
+                    <ul class="features">
+                        <li>5 jours d'immersion totale</li>
+                        <li>Pension complète bio</li>
+                        <li>Kit complet de rituels</li>
+                        <li>3 mois de suivi personnalisé</li>
+                    </ul>
+                    <p class="price">À partir de 890€ par famille</p>
+                    <button class="select-option" data-option="week">Choisir cette option</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="booking-form" id="bookingForm" style="display: none;">
+            <h2>Formulaire de réservation</h2>
+            <form class="reservation-form">
+                <div class="form-section">
+                    <h3>Informations personnelles</h3>
+                    <div class="form-group">
+                        <label for="parentName">Nom du parent</label>
+                        <input type="text" id="parentName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Téléphone</label>
+                        <input type="tel" id="phone" required>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Informations sur l'enfant</h3>
+                    <div class="form-group">
+                        <label for="childName">Nom de l'enfant</label>
+                        <input type="text" id="childName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="childAge">Âge de l'enfant</label>
+                        <input type="number" id="childAge" min="4" max="12" required>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Dates souhaitées</h3>
+                    <div class="form-group">
+                        <label for="startDate">Date d'arrivée</label>
+                        <input type="date" id="startDate" required>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Remarques particulières</h3>
+                    <div class="form-group">
+                        <label for="notes">Allergies, régime alimentaire, besoins spécifiques...</label>
+                        <textarea id="notes" rows="4"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="submit-button">Confirmer la réservation</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="booking-info">
+            <h2>Informations utiles</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Paiement</h3>
+                    <p>Acompte de 30% à la réservation<br>Solde 30 jours avant le séjour</p>
+                </div>
+                <div class="info-card">
+                    <h3>Annulation</h3>
+                    <p>Gratuite jusqu'à 30 jours avant<br>50% de remboursement jusqu'à 14 jours</p>
+                </div>
+                <div class="info-card">
+                    <h3>Documents</h3>
+                    <p>Liste détaillée envoyée après réservation<br>Fiche sanitaire à compléter</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Éveil & Vous</h4>
+                <p>Un espace dédié à l'épanouissement des enfants et des familles.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Suivez-nous</h4>
+                <div class="social-links">
+                    <a href="https://instagram.com/" target="_blank">Instagram</a>
+                    <a href="https://facebook.com/" target="_blank">Facebook</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Email: contact@eveil-vous.fr</p>
+                <p>Tél: 01 23 45 67 89</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Éveil & Vous. Tous droits réservés.</p>
+            <a href="../pages/mentions-legales.html">Mentions légales</a>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/reservation.js"></script>
+</body>
+</html>

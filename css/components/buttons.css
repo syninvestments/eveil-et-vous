@@ -1,0 +1,91 @@
+/* ============================================
+   BOUTONS - Design Moderne et Attractif
+   ============================================ */
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2.5rem;
+    font-size: 1.05rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-body);
+    letter-spacing: 0.3px;
+}
+
+.button::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.2), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.button:hover::before {
+    opacity: 1;
+}
+
+.button-primary {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: white;
+    box-shadow: 0 8px 25px rgba(255, 139, 148, 0.3);
+}
+
+.button-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(255, 139, 148, 0.4);
+}
+
+.button-secondary {
+    background: white;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.button-secondary:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 139, 148, 0.3);
+}
+
+/* Animation pour les boutons */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 107, 107, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(255, 107, 107, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 107, 107, 0);
+    }
+}
+
+.button-primary:active {
+    animation: pulse 0.3s ease-out;
+}
+
+/* Style pour le bouton dans la navigation */
+.nav-menu .button {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.95rem;
+    margin-left: var(--spacing-md);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .button {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.95rem;
+    }
+}

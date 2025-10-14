@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Éveil & Vous</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/contact.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="../index.html">Éveil & Vous</a>
+            </div>
+            <div class="nav-links">
+                <a href="../pages/concept.html">Le Concept</a>
+                <a href="../pages/activites.html">Nos Activités</a>
+                <a href="../pages/sejours.html">Nos Séjours</a>
+                <a href="../pages/about.html">About</a>
+                <a href="../pages/contact.html">Contact</a>
+                <a href="../pages/reservation.html" class="cta-button">Réserver mon séjour</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contact-hero">
+            <div class="hero-content">
+                <h1>Contactez-nous</h1>
+                <p class="subtitle">Une question ? Nous sommes là pour vous répondre</p>
+            </div>
+        </section>
+
+        <section class="contact-info">
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Par téléphone</h3>
+                    <p>Du lundi au vendredi</p>
+                    <p>9h - 18h</p>
+                    <a href="tel:0123456789">01 23 45 67 89</a>
+                </div>
+                <div class="info-card">
+                    <h3>Par email</h3>
+                    <p>Réponse sous 24-48h</p>
+                    <a href="mailto:contact@eveil-vous.fr">contact@eveil-vous.fr</a>
+                </div>
+                <div class="info-card">
+                    <h3>Sur les réseaux</h3>
+                    <div class="social-links">
+                        <a href="https://instagram.com/" target="_blank">Instagram</a>
+                        <a href="https://facebook.com/" target="_blank">Facebook</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-form">
+            <div class="form-container">
+                <h2>Envoyez-nous un message</h2>
+                <form class="message-form">
+                    <div class="form-group">
+                        <label for="name">Nom complet</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Sujet</label>
+                        <select id="subject" required>
+                            <option value="">Choisir un sujet</option>
+                            <option value="information">Demande d'information</option>
+                            <option value="reservation">Question sur une réservation</option>
+                            <option value="programme">Question sur les programmes</option>
+                            <option value="autre">Autre</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" rows="6" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">Envoyer le message</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="faq">
+            <h2>Questions fréquentes</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>Comment réserver un séjour ?</h3>
+                    <p>Vous pouvez réserver directement en ligne via notre page de réservation ou nous contacter par téléphone pour être guidé dans votre choix.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Quels sont les modes de paiement acceptés ?</h3>
+                    <p>Nous acceptons les cartes bancaires, les virements et les chèques. Un paiement en plusieurs fois est possible pour les séjours semaine.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Quand recevrai-je la confirmation ?</h3>
+                    <p>Une confirmation automatique vous est envoyée par email dès la réservation. Les détails pratiques suivent sous 48h.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Éveil & Vous</h4>
+                <p>Un espace dédié à l'épanouissement des enfants et des familles.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Suivez-nous</h4>
+                <div class="social-links">
+                    <a href="https://instagram.com/" target="_blank">Instagram</a>
+                    <a href="https://facebook.com/" target="_blank">Facebook</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Email: contact@eveil-vous.fr</p>
+                <p>Tél: 01 23 45 67 89</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Éveil & Vous. Tous droits réservés.</p>
+            <a href="../pages/mentions-legales.html">Mentions légales</a>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

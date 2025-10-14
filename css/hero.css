@@ -1,0 +1,116 @@
+.hero-section {
+    min-height: 100vh;
+    padding: 64px 5% 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    background: var(--background-color);
+}
+
+.hero-content {
+    padding-right: 2rem;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    color: var(--heading-color);
+}
+
+.hero-content .subtitle {
+    font-size: var(--font-min-size);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+}
+
+.proof-points {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.proof-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.proof-label {
+    font-size: var(--font-min-size);
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.proof-value {
+    font-size: var(--font-min-size);
+    color: var(--text-color);
+}
+
+.hero-cta {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.cta-button.primary {
+    background: var(--primary-color);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    font-size: var(--font-min-size);
+    font-weight: 500;
+}
+
+.cta-button.secondary {
+    background: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    font-size: var(--font-min-size);
+    font-weight: 500;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+    .hero-section {
+        grid-template-columns: 1fr;
+        padding: 80px 5% 2rem;
+    }
+
+    .hero-content {
+        padding-right: 0;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .proof-points {
+        justify-content: center;
+    }
+
+    .hero-cta {
+        justify-content: center;
+    }
+}

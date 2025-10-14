@@ -1,0 +1,51 @@
+/* Image placeholders - À remplacer par vos images réelles */
+[data-img="hero"] {
+    background-image: url('../assets/images/placeholder-hero.jpg');
+}
+
+[data-img="activity-1"] {
+    background-image: url('../assets/images/placeholder-activity-1.jpg');
+}
+
+[data-img="activity-2"] {
+    background-image: url('../assets/images/placeholder-activity-2.jpg');
+}
+
+[data-img="activity-3"] {
+    background-image: url('../assets/images/placeholder-activity-3.jpg');
+}
+
+[data-img="activity-4"] {
+    background-image: url('../assets/images/placeholder-activity-4.jpg');
+}
+
+[data-img="activity-5"] {
+    background-image: url('../assets/images/placeholder-activity-5.jpg');
+}
+
+/* Image loading */
+.img-loading {
+    position: relative;
+    background: #f0f0f0;
+    overflow: hidden;
+}
+
+.img-loading::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}

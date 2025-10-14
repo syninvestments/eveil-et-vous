@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Réservez votre séjour d'éveil en famille. 7 jours/6 nuits à Limoux pour enfants de 4-12 ans. Hébergement en dôme privatif et ateliers quotidiens inclus.">
+    <title>Réservation | Éveil & Vous</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">PE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réserver votre séjour | Éveil & Vous</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    
+    <style>
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 12px 0;
+        }
+        
+        .reservation-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px 60px;
+        }
+        
+        .reservation-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .reservation-header h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(2rem, 5vw, 3rem);
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+        
+        .reservation-header p {
+            font-size: 1.125rem;
+            color: #666;
+            line-height: 1.7;
+        }
+        
+        .form-container {
+            background: white;
+            border-radius: 25px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            overflow: hidden;
+            min-height: 800px;
+        }
+        
+        .form-container iframe {
+            width: 100%;
+            min-height: 800px;
+            border: none;
+        }
+        
+        .info-boxes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .info-box {
+            background: linear-gradient(135deg, #FFE6F0 0%, #FFF 100%);
+            padding: 30px;
+            border-radius: 20px;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .info-box:nth-child(2) {
+            background: linear-gradient(135deg, #E0F7FA 0%, #FFF 100%);
+            border-left-color: var(--secondary);
+        }
+        
+        .info-box:nth-child(3) {
+            background: linear-gradient(135deg, #FFF9E6 0%, #FFF 100%);
+            border-left-color: var(--accent);
+        }
+        
+        .info-box h3 {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            color: var(--dark);
+        }
+        
+        .info-box p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #666;
+            margin: 0;
+        }
+        
+        .info-box .icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">Éveil & Vous</a>
+                
+                <nav>
+                    <ul>
+                        <li><a href="about.html">À Propos</a></li>
+                        <li><a href="activites.html">Activités</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="reservation.html" class="btn btn-primary" style="background: var(--primary);">Réserver mon séjour</a></li>
+                    </ul>
+                </nav>
+                
+                <button class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="reservation-container">
+        <div class="reservation-header">
+            <h1>Réservez votre séjour</h1>
+            <p>Remplissez le formulaire ci-dessous pour réserver votre semaine d'éveil en famille</p>
+        </div>
+        
+        <div class="info-boxes">
+            <div class="info-box">
+                <div class="icon">📅</div>
+                <h3>Séjours à la semaine</h3>
+                <p><strong>Du lundi au vendredi</strong> - 7 jours / 6 nuits d'immersion totale en famille dans un cadre naturel exceptionnel.</p>
+                <p style="margin-top: 10px; font-size: 0.95rem; color: #666;"><strong>Arrivée :</strong> Dimanche à partir de 16h (inclus dans le tarif) • <strong>Départ :</strong> Vendredi à 16h après le goûter</p>
+            </div>
+            
+            <div class="info-box">
+                <div class="icon">👨‍👩‍👧‍👦</div>
+                <h3>Petits groupes</h3>
+                <p>Maximum 8-12 enfants par séjour pour un accompagnement personnalisé et bienveillant.</p>
+            </div>
+            
+            <div class="info-box">
+                <div class="icon">✨</div>
+                <h3>Tout inclus</h3>
+                <p>Hébergement, repas bio, activités guidées, matériel et fiches-rituels à ramener chez vous.</p>
+            </div>
+        </div>
+        
+        <div class="form-container">
+            <iframe 
+                src="https://embed.fillout.com/t/t2Y2KGjUaMus?fillout-embed-id=51904600933870&fillout-embed-type=standard&fillout-embed-parent-page=https%3A%2F%2Feveil-vous.webflow.io%2Fsejours%2Fsemaine&fillout-embed-dynamic-resize=true" 
+                allow="microphone; camera; geolocation" 
+                style="border: 0px;" 
+                title="Formulaire de réservation">
+            </iframe>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-widget">
+                    <h3>Éveil & Vous</h3>
+                    <p>Éveil en famille au milieu de la nature</p>
+                </div>
+                <div class="footer-widget">
+                    <h3>Pages</h3>
+                    <p><a href="index.html">Accueil</a></p>
+                    <p><a href="about.html">À Propos</a></p>
+                    <p><a href="activites.html">Activités</a></p>
+                    <p><a href="reservation.html">Réserver</a></p>
+                    <p><a href="contact.html">Contact</a></p>
+                </div>
+                <div class="footer-widget">
+                    <h3>Contact</h3>
+                    <p>Limoux, Aude (11)<br>contact@eveil-vous.fr</p>
+                </div>
+                <div class="footer-widget">
+                    <h3>Suivez-nous</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2025 Éveil & Vous</p></div>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+    
+    <script>
+        // Script pour ajuster dynamiquement la hauteur de l'iframe
+        window.addEventListener('message', function(e) {
+            if (e.data && e.data.type === 'fillout-iframe-resize') {
+                var iframe = document.querySelector('iframe[title="Formulaire de réservation"]');
+                if (iframe && e.data.height) {
+                    iframe.style.height = e.data.height + 'px';
+                }
+            }
+        });
+    </script>
+</body>
+</html>

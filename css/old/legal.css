@@ -1,0 +1,49 @@
+/* Styles spécifiques aux mentions légales */
+.legal-hero {
+    height: 30vh;
+    background: var(--gradient-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 5% 0;
+    color: white;
+}
+
+.legal-hero h1 {
+    color: white;
+    font-size: 3rem;
+}
+
+.legal-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 5rem 5%;
+}
+
+.legal-section {
+    margin-bottom: 3rem;
+}
+
+.legal-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.legal-section p {
+    margin-bottom: 1rem;
+    font-size: var(--font-min-size);
+    line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .legal-hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .legal-content {
+        padding: 3rem 5%;
+    }
+}

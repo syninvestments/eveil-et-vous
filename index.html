@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Des séjours pensés pour eux, des moments précieux pour vous. Éveil en famille au cœur de la nature.">
+    <title>Éveil & Vous | Séjours en famille au cœur de la nature</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    
+    <style>
+        /* Header sticky et réduit */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 12px 0;
+        }
+        
+        /* Hero amélioré */
+        .hero-new {
+            background: linear-gradient(135deg, #FFE6F0 0%, #E0F7FA 100%);
+            padding: 80px 0 60px;
+            min-height: auto;
+        }
+        
+        .hero-new .container {
+            max-width: 1200px;
+        }
+        
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .hero-text h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+        
+        .hero-text .subtitle {
+            font-size: 1.125rem;
+            line-height: 1.7;
+            color: #555;
+            margin-bottom: 30px;
+        }
+        
+        .hero-bullets {
+            list-style: none;
+            margin-bottom: 35px;
+            padding: 0;
+        }
+        
+        .hero-bullets li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            font-size: 1rem;
+            color: #666;
+        }
+        
+        .hero-bullets li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .hero-cta {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .hero-image-container {
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+        
+        .hero-image-container img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        /* Sections */
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title-center {
+            text-align: center;
+            font-family: var(--font-heading);
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.125rem;
+            line-height: 1.7;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto 50px;
+        }
+        
+        /* Piliers - 3 colonnes */
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .pillar-card {
+            background: white;
+            padding: 40px;
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+        
+        .pillar-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary), #FF8FA3);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin: 0 auto 25px;
+        }
+        
+        .pillar-card:nth-child(2) .pillar-icon {
+            background: linear-gradient(135deg, var(--secondary), #5DD9D1);
+        }
+        
+        .pillar-card:nth-child(3) .pillar-icon {
+            background: linear-gradient(135deg, var(--accent), #FFF099);
+        }
+        
+        .pillar-card h3 {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .pillar-card p {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .pillar-examples {
+            background: var(--light);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: left;
+            margin-top: 20px;
+        }
+        
+        .pillar-examples strong {
+            color: var(--dark);
+            display: block;
+            margin-bottom: 8px;
+        }
+        
+        .pillar-examples p {
+            font-size: 0.95rem;
+            margin: 0;
+        }
+        
+        /* Bénéfices - 2 colonnes */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            max-width: 1100px;
+            margin: 0 auto 60px;
+        }
+        
+        .benefits-box {
+            background: linear-gradient(135deg, #FFE6F0 0%, #FFF 100%);
+            padding: 40px;
+            border-radius: 25px;
+            border-left: 5px solid var(--primary);
+        }
+        
+        .benefits-box:nth-child(2) {
+            background: linear-gradient(135deg, #E0F7FA 0%, #FFF 100%);
+            border-left-color: var(--secondary);
+        }
+        
+        .benefits-box h3 {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+        
+        .benefits-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .benefits-list li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #666;
+        }
+        
+        .benefits-list li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        .benefits-box:nth-child(2) .benefits-list li::before {
+            color: var(--secondary);
+        }
+        
+        /* Témoignage */
+        .testimonial-box {
+            background: white;
+            padding: 40px;
+            border-radius: 25px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            max-width: 800px;
+            margin: 50px auto;
+            text-align: center;
+            border-top: 5px solid var(--accent);
+        }
+        
+        .testimonial-text {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: #555;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-author {
+            font-size: 1rem;
+            color: var(--dark);
+            font-weight: 600;
+        }
+        
+        /* Avis clients */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .review-card {
+            background: white;
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+        
+        .review-stars {
+            color: #FFD700;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+        
+        .review-text {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .review-author {
+            font-weight: 600;
+            color: var(--dark);
+            font-size: 0.95rem;
+        }
+        
+        /* FAQ */
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-item:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .faq-question {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-answer {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #666;
+        }
+        
+        /* CTA Banner */
+        .cta-banner {
+            background: linear-gradient(135deg, #FF6B9D 0%, #4ECDC4 100%);
+            padding: 60px 0;
+            text-align: center;
+            color: white;
+        }
+        
+        .cta-banner h2 {
+            font-family: var(--font-heading);
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            margin-bottom: 15px;
+        }
+        
+        .cta-banner p {
+            font-size: 1.125rem;
+            margin-bottom: 10px;
+            opacity: 0.95;
+        }
+        
+        .cta-bullets {
+            list-style: none;
+            padding: 0;
+            margin: 25px 0 35px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .cta-bullets li {
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .benefits-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .hero-cta {
+                flex-direction: column;
+            }
+            
+            .hero-cta .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">Éveil & Vous</a>
+                
+                <nav>
+                    <ul>
+                        <li><a href="about.html">À Propos</a></li>
+                        <li><a href="activites.html">Activités</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="reservation.html" class="btn btn-primary">Réserver mon séjour</a></li>
+                    </ul>
+                </nav>
+                
+                <button class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero-new">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-text">
+                    <h1>Des séjours pensés pour eux, des moments précieux pour vous.</h1>
+                    <p class="subtitle">
+                        Au cœur de la nature, des activités guidées (sensoriel, émotionnel, corporel, spirituel, intellectuel) pour favoriser l'éveil, renforcer le lien parent-enfant et installer des rituels apaisants.
+                    </p>
+                    
+                    <ul class="hero-bullets">
+                        <li><strong>Âges :</strong> 4–12 ans</li>
+                        <li><strong>Formule :</strong> Séjours à la semaine</li>
+                        <li><strong>Encadrement bienveillant</strong> par pros certifiés</li>
+                        <li><strong>Repas sains</strong> / activités outdoor</li>
+                    </ul>
+                    
+                    <div class="hero-cta">
+                        <a href="reservation.html" class="btn btn-primary" style="padding: 15px 35px; font-size: 1.05rem;">Réserver</a>
+                        <a href="#concept" class="btn btn-secondary" style="padding: 15px 35px; font-size: 1.05rem;">Découvrir les programmes</a>
+                    </div>
+                </div>
+                
+                <div class="hero-image-container">
+                    <img src="images/hero.jpg" alt="Enfants heureux pendant une activité" onerror="this.src='https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=800'">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONCEPT ===== -->
+    <section id="concept" class="section" style="background: var(--light);">
+        <div class="container">
+            <h2 class="section-title-center">Grandir ensemble, naturellement.</h2>
+            <p class="section-subtitle">
+                Une approche globale de l'éveil : chaque enfant explore ses sens, bouge, s'exprime, pense et ressent—sans pression, avec bienveillance.
+            </p>
+            
+            <div class="pillars-grid">
+                <div class="pillar-card">
+                    <div class="pillar-icon">🌈</div>
+                    <h3>Éveil global</h3>
+                    <p>Stimuler sans surcharger, apprendre à se recentrer.</p>
+                    <div class="pillar-examples">
+                        <strong>Exemples :</strong>
+                        <p>Boîte à odeurs, parcours moteur, "thermomètre des émotions", jeux d'attention.</p>
+                    </div>
+                </div>
+                
+                <div class="pillar-card">
+                    <div class="pillar-icon">👨‍👩‍👧</div>
+                    <h3>Accompagnement parental</h3>
+                    <p>Renforcer le lien, retrouver des moments simples et efficaces.</p>
+                    <div class="pillar-examples">
+                        <strong>Exemples :</strong>
+                        <p>Fiches-rituels, respiration 4-4, routine du soir, mots-clés pour nommer les émotions.</p>
+                    </div>
+                </div>
+                
+                <div class="pillar-card">
+                    <div class="pillar-icon">🌳</div>
+                    <h3>Cadre nature & bienveillance</h3>
+                    <p>Apaiser, sécuriser, favoriser l'autonomie.</p>
+                    <div class="pillar-examples">
+                        <strong>Exemples :</strong>
+                        <p>Activités outdoor, temps libres guidés, repas sains, groupes 8–12 enfants.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="benefits-grid">
+                <div class="benefits-box">
+                    <h3>Ce que votre enfant y gagne</h3>
+                    <ul class="benefits-list">
+                        <li>Plus de calme et de concentration</li>
+                        <li>Une meilleure expression des émotions</li>
+                        <li>Confiance en soi et curiosité relancée</li>
+                        <li>Repères concrets pour se réguler</li>
+                    </ul>
+                </div>
+                
+                <div class="benefits-box">
+                    <h3>Ce que vous ramenez à la maison</h3>
+                    <ul class="benefits-list">
+                        <li>Rituels clés-en-main (5–10 min/jour)</li>
+                        <li>Un vocabulaire commun sans tension</li>
+                        <li>Des routines pour le coucher, les devoirs</li>
+                        <li>Des outils pour apaiser les matinées</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin: 50px 0 30px;">
+                <h3 style="font-family: var(--font-heading); font-size: 2rem; color: var(--dark); margin-bottom: 10px;">
+                    En deux mots
+                </h3>
+                <p style="font-size: 1.5rem; color: var(--primary); font-weight: 600;">
+                    Moins d'agitation, plus de connexion.
+                </p>
+            </div>
+            
+            <div class="testimonial-box">
+                <div class="testimonial-text">
+                    "On a enfin trouvé un rythme serein. Ma fille met en mots ce qu'elle ressent et s'apaise plus vite."
+                </div>
+                <div class="testimonial-author">— Leïla, maman de Lina (7 ans)</div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="reservation.html" class="btn btn-primary" style="padding: 15px 40px; font-size: 1.05rem;">Réserver mon séjour</a>
+                <a href="contact.html" class="btn btn-secondary" style="padding: 15px 40px; font-size: 1.05rem; margin-left: 15px;">Nous contacter</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== COMMENT ÇA MARCHE ===== -->
+    <section class="section" style="background: linear-gradient(135deg, rgba(78, 205, 196, 0.08), rgba(255, 107, 157, 0.08));">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <h2 style="font-family: var(--font-heading); font-size: clamp(2.2rem, 5vw, 3.5rem); margin-bottom: 20px; color: var(--dark);">
+                    Comment ça marche ?
+                </h2>
+                <p style="font-size: 1.3rem; color: #666; max-width: 700px; margin: 0 auto;">
+                    Réserver votre séjour en famille est simple et rapide
+                </p>
+            </div>
+
+            <div style="max-width: 1200px; margin: 0 auto;">
+                <div style="display: flex; gap: 20px; overflow-x: auto; padding: 20px 0; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;">
+                    
+                    <!-- Étape 1 -->
+                    <div style="min-width: 280px; flex: 1; text-align: center; position: relative; background: white; padding: 35px 25px; border-radius: 25px; box-shadow: 0 15px 40px rgba(0,0,0,0.08); scroll-snap-align: start;">
+                        <div style="background: linear-gradient(135deg, #FF6B9D, #FF8FA3); width: 90px; height: 90px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; box-shadow: 0 15px 40px rgba(255, 107, 157, 0.3);">
+                            <span style="color: white; font-family: var(--font-heading); font-size: 2.5rem; font-weight: 700;">1</span>
+                        </div>
+                        <h3 style="font-family: var(--font-heading); font-size: 1.6rem; margin-bottom: 15px; color: var(--dark);">
+                            Choisissez vos dates
+                        </h3>
+                        <p style="font-size: 1.05rem; line-height: 1.7; color: #666;">
+                            Consultez le calendrier et sélectionnez la semaine qui vous convient. <strong>Séjours du lundi au vendredi</strong> (arrivée dimanche 16h, départ vendredi 16h).
+                        </p>
+                    </div>
+
+                    <!-- Étape 2 -->
+                    <div style="min-width: 280px; flex: 1; text-align: center; position: relative; background: white; padding: 35px 25px; border-radius: 25px; box-shadow: 0 15px 40px rgba(0,0,0,0.08); scroll-snap-align: start;">
+                        <div style="background: linear-gradient(135deg, #4ECDC4, #5DD9D1); width: 90px; height: 90px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; box-shadow: 0 15px 40px rgba(78, 205, 196, 0.3);">
+                            <span style="color: white; font-family: var(--font-heading); font-size: 2.5rem; font-weight: 700;">2</span>
+                        </div>
+                        <h3 style="font-family: var(--font-heading); font-size: 1.6rem; margin-bottom: 15px; color: var(--dark);">
+                            Remplissez le formulaire
+                        </h3>
+                        <p style="font-size: 1.05rem; line-height: 1.7; color: #666;">
+                            Indiquez les informations sur votre famille (nombre d'enfants, âges, besoins particuliers).
+                        </p>
+                    </div>
+
+                    <!-- Étape 3 -->
+                    <div style="min-width: 280px; flex: 1; text-align: center; position: relative; background: white; padding: 35px 25px; border-radius: 25px; box-shadow: 0 15px 40px rgba(0,0,0,0.08); scroll-snap-align: start;">
+                        <div style="background: linear-gradient(135deg, #FFE66D, #FFA07A); width: 90px; height: 90px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; box-shadow: 0 15px 40px rgba(255, 230, 109, 0.3);">
+                            <span style="color: white; font-family: var(--font-heading); font-size: 2.5rem; font-weight: 700;">3</span>
+                        </div>
+                        <h3 style="font-family: var(--font-heading); font-size: 1.6rem; margin-bottom: 15px; color: var(--dark);">
+                            Recevez la confirmation
+                        </h3>
+                        <p style="font-size: 1.05rem; line-height: 1.7; color: #666;">
+                            Nous vous contactons sous 48h pour confirmer votre réservation et répondre à vos questions.
+                        </p>
+                    </div>
+
+                    <!-- Étape 4 -->
+                    <div style="min-width: 280px; flex: 1; text-align: center; position: relative; background: white; padding: 35px 25px; border-radius: 25px; box-shadow: 0 15px 40px rgba(0,0,0,0.08); scroll-snap-align: start;">
+                        <div style="background: linear-gradient(135deg, #FF6B9D, #4ECDC4); width: 90px; height: 90px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; box-shadow: 0 15px 40px rgba(255, 107, 157, 0.3);">
+                            <span style="color: white; font-family: var(--font-heading); font-size: 2.5rem; font-weight: 700;">4</span>
+                        </div>
+                        <h3 style="font-family: var(--font-heading); font-size: 1.6rem; margin-bottom: 15px; color: var(--dark);">
+                            Profitez de l'expérience
+                        </h3>
+                        <p style="font-size: 1.05rem; line-height: 1.7; color: #666;">
+                            Arrivez et laissez-vous guider pour une semaine d'éveil inoubliable en famille !
+                        </p>
+                    </div>
+
+                </div>
+                
+                <div style="text-align: center; margin-top: 30px; color: #999; font-size: 0.95rem;">
+                    ← Faites glisser horizontalement pour voir toutes les étapes →
+                </div>
+
+                <div style="background: white; padding: 45px; border-radius: 25px; margin-top: 60px; box-shadow: 0 20px 50px rgba(0,0,0,0.08); border: 2px solid rgba(255, 107, 157, 0.15);">
+                    <div style="display: flex; align-items: start; gap: 25px; flex-wrap: wrap;">
+                        <div style="background: linear-gradient(135deg, rgba(255, 107, 157, 0.1), rgba(78, 205, 196, 0.1)); width: 70px; height: 70px; border-radius: 20px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <span style="font-size: 2.5rem;">💡</span>
+                        </div>
+                        <div style="flex: 1; min-width: 300px;">
+                            <h3 style="font-family: var(--font-heading); font-size: 1.6rem; margin-bottom: 15px; color: var(--dark);">
+                                Besoin d'aide pour choisir ?
+                            </h3>
+                            <p style="font-size: 1.05rem; line-height: 1.8; color: #666; margin-bottom: 20px;">
+                                Vous avez des questions sur le déroulement du séjour, les activités proposées, ou des besoins spécifiques ? N'hésitez pas à nous contacter, nous sommes là pour vous accompagner.
+                            </p>
+                            <a href="contact.html" style="color: var(--primary); font-weight: 700; font-size: 1.05rem; text-decoration: none; border-bottom: 2px solid var(--primary); padding-bottom: 3px; transition: opacity 0.3s;">
+                                Contactez-nous →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== LIEU ===== -->
+    <section id="lieu" class="section">
+        <div class="container">
+            <h2 class="section-title-center">Notre Lieu Magique</h2>
+            <p class="section-subtitle">
+                Un cadre naturel et apaisant à Limoux, dans l'Aude. Nos dômes géodésiques offrent un espace unique pour se ressourcer en famille.
+            </p>
+            
+            <div class="lieu-gallery">
+                <div class="gallery-card">
+                    <img src="images/domes.jpg" alt="Dômes Géodésiques" onerror="this.src='https://images.unsplash.com/photo-1478860409698-8707f313ee8b?w=600'">
+                    <div class="gallery-overlay">
+                        <h4>Dômes Géodésiques</h4>
+                        <p>Architecture en harmonie avec la nature</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-card">
+                    <img src="images/domes2.jpg" alt="Espace Intérieur" onerror="this.src='https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600'">
+                    <div class="gallery-overlay">
+                        <h4>Espace Intérieur</h4>
+                        <p>Un cocon de bien-être baigné de lumière</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-card">
+                    <img src="images/domes3.jpg" alt="Vue d'Ensemble" onerror="this.src='https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600'">
+                    <div class="gallery-overlay">
+                        <h4>Vue d'Ensemble</h4>
+                        <p>Un village d'éveil dans la verdure</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PROGRAMME DÉTAILLÉ ===== -->
+    <section class="section">
+        <div class="container">
+            <div style="max-width: 1100px; margin: 0 auto;">
+                
+                <!-- Horaires et Informations -->
+                <div style="background: white; padding: 50px; border-radius: 30px; box-shadow: 0 25px 60px rgba(0,0,0,0.1); border: 2px solid rgba(78, 205, 196, 0.15);">
+                    <div style="background: linear-gradient(135deg, rgba(255, 107, 157, 0.1), rgba(78, 205, 196, 0.1)); padding: 35px; border-radius: 20px;">
+                        <div style="display: flex; align-items: start; gap: 20px; margin-bottom: 25px;">
+                            <span style="font-size: 3rem; flex-shrink: 0;">📅</span>
+                            <div>
+                                <strong style="color: var(--dark); font-size: 1.2rem; display: block; margin-bottom: 10px;">Horaires du séjour :</strong>
+                                <p style="color: #666; font-size: 1rem; line-height: 1.8; margin: 0;">
+                                    <strong>Arrivée :</strong> Dimanche à partir de 16h (inclus dans le tarif)<br>
+                                    <strong>Séjour :</strong> Du lundi au vendredi<br>
+                                    <strong>Départ :</strong> Vendredi à 16h après le goûter
+                                </p>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: start; gap: 20px; border-top: 1px solid rgba(0,0,0,0.1); padding-top: 25px;">
+                            <span style="font-size: 3rem; flex-shrink: 0;">✨</span>
+                            <div>
+                                <strong style="color: var(--dark); font-size: 1.2rem; display: block; margin-bottom: 10px;">À noter :</strong>
+                                <p style="color: #666; font-size: 1rem; line-height: 1.8; margin: 0;">
+                                    Les activités s'adaptent en fonction de l'âge des enfants, des saisons, de la météo et des besoins individuels. Notre approche reste flexible et bienveillante.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== AVIS CLIENTS ===== -->
+    <section class="section" style="background: var(--light);">
+        <div class="container">
+            <h2 class="section-title-center">Ils en parlent mieux que nous</h2>
+            
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">
+                        "Une expérience magnifique ! Les enfants ont adoré les activités et nous avons appris des techniques que nous utilisons tous les jours maintenant."
+                    </p>
+                    <div class="review-author">— Sophie, maman de 2 enfants</div>
+                </div>
+                
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">
+                        "Le cadre est exceptionnel et l'équipe vraiment bienveillante. Mon fils de 6 ans parle encore des ateliers émotionnels. Merci !"
+                    </p>
+                    <div class="review-author">— Marc, papa de Lucas</div>
+                </div>
+                
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">
+                        "Nous avons passé un week-end ressourçant. Les rituels appris nous aident énormément pour les couchers. On recommande à 100% !"
+                    </p>
+                    <div class="review-author">— Amélie & Thomas</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title-center">Questions Fréquentes</h2>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>À partir de quel âge peut-on venir ?</span>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Nos séjours sont adaptés aux enfants de 4 à 12 ans. Chaque activité est pensée pour respecter le développement de chaque tranche d'âge.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Faut-il rester avec mon enfant pendant les activités ?</span>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Certaines activités sont en duo parent-enfant, d'autres sont réservées aux enfants seuls. Nous proposons les deux formules pour favoriser l'autonomie et renforcer le lien.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Que comprend le tarif du séjour ?</span>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Le tarif inclut l'hébergement en dôme privatif, tous les repas bio, toutes les activités guidées, le matériel et les fiches-rituels à ramener chez vous.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Combien de familles par séjour ?</span>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Nous limitons à 8-12 enfants maximum par séjour (soit 4-6 familles) pour garantir un accompagnement personnalisé et créer une ambiance chaleureuse.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Que se passe-t-il en cas de mauvais temps ?</span>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Nous disposons de salles d'activités couvertes et adaptons le programme. La nature reste accessible avec un équipement adapté (fourni sur place).
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA BANNER ===== -->
+    <section class="cta-banner">
+        <div class="container">
+            <h2>Prêts pour un séjour qui apaise toute la famille ?</h2>
+            <p>Séjours en nature, activités guidées, rituels simples à ramener à la maison. Groupes limités.</p>
+            
+            <ul class="cta-bullets">
+                <li><i class="fas fa-check-circle"></i> Respiration 4-4 & routine du soir</li>
+                <li><i class="fas fa-check-circle"></i> Jeux d'attention & vocabulaire des émotions</li>
+                <li><i class="fas fa-check-circle"></i> Activités nature adaptées à l'âge</li>
+            </ul>
+            
+            <div class="cta-buttons">
+                <a href="reservation.html" class="btn" style="background: white; color: var(--primary); padding: 15px 40px; font-size: 1.05rem;">Je réserve une place</a>
+                <a href="#" class="btn" style="background: transparent; border: 2px solid white; color: white; padding: 15px 40px; font-size: 1.05rem;">Voir les avis</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-widget">
+                    <h3>Éveil & Vous</h3>
+                    <p>Éveil en famille au milieu de la nature</p>
+                </div>
+                <div class="footer-widget">
+                    <h3>Pages</h3>
+                    <p><a href="about.html">À Propos</a></p>
+                    <p><a href="activites.html">Activités</a></p>
+                    <p><a href="reservation.html">Réserver</a></p>
+                    <p><a href="contact.html">Contact</a></p>
+                </div>
+                <div class="footer-widget">
+                    <h3>Contact</h3>
+                    <p>Limoux, Aude (11)<br>contact@eveil-vous.fr</p>
+                </div>
+                <div class="footer-widget">
+                    <h3>Suivez-nous</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2025 Éveil & Vous</p></div>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

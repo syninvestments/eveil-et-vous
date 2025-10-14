@@ -1,0 +1,271 @@
+/* Styles responsifs */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+
+    /* Navigation */
+    .nav-menu {
+        position: static;
+        height: auto;
+        background: none;
+        flex-direction: row;
+        width: auto;
+    }
+
+    .nav-toggle {
+        display: none;
+    }
+
+    .nav-link {
+        font-size: 1rem;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+
+    /* Typography */
+    h1 {
+        font-size: 3.5rem;
+    }
+
+    h2 {
+        font-size: 2.8rem;
+    }
+
+    /* Lieu Section */
+    .lieu-gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Activities Slider - Tablettes */
+    .activity-card {
+        flex: 0 0 350px !important;
+        width: 350px !important;
+    }
+
+    .activities-slider-container {
+        padding: 0 4rem;
+    }
+
+    /* Sections */
+    .section {
+        padding: var(--spacing-2xl) 0;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .container {
+        max-width: var(--container-max-width);
+    }
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.75rem;
+    }
+}
+
+/* Responsive Spacing */
+@media (max-width: 768px) {
+    .section {
+        padding: var(--spacing-xl) 0;
+    }
+
+    .grid {
+        gap: var(--spacing-md);
+    }
+
+    /* Lieu Section */
+    .lieu-section {
+        padding: 3rem 0;
+    }
+
+    .lieu-gallery {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 0 1rem;
+    }
+
+    .gallery-image {
+        height: 280px;
+    }
+
+    .lieu-description {
+        margin: 2rem 1rem 0;
+        padding: 2rem 1.5rem;
+    }
+
+    .lieu-description h3 {
+        font-size: 1.6rem;
+    }
+
+    .lieu-intro {
+        padding: 0 1rem;
+        margin-bottom: 2rem;
+        font-size: 1.1rem;
+    }
+
+    /* Hero Section */
+    .hero {
+        min-height: 70vh;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    /* Activities Slider */
+    .activities-slider-container {
+        padding: 0 3.5rem;
+    }
+
+    .activity-card {
+        flex: 0 0 300px !important;
+        width: 300px !important;
+        min-height: 350px;
+    }
+
+    .slider-btn {
+        width: 45px;
+        height: 45px;
+    }
+
+    .slider-btn i {
+        font-size: 1rem;
+    }
+
+    .slider-btn-prev {
+        left: 0.5rem;
+    }
+
+    .slider-btn-next {
+        right: 0.5rem;
+    }
+
+    /* Concept */
+    .concept-features {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+/* Responsive Images */
+@media (max-width: 576px) {
+    .responsive-img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Responsive Forms */
+@media (max-width: 576px) {
+    .form-group {
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .form-input {
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+}
+
+/* Responsive Buttons */
+@media (max-width: 576px) {
+    .button {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Hide elements on mobile */
+@media (max-width: 768px) {
+    .hide-mobile {
+        display: none !important;
+    }
+}
+
+/* Hide elements on desktop */
+@media (min-width: 769px) {
+    .hide-desktop {
+        display: none !important;
+    }
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+
+    .footer-widget {
+        text-align: center;
+    }
+}
+
+/* Responsive Navigation Menu */
+@media (max-width: 768px) {
+    .site-header {
+        padding: var(--spacing-xs) 0;
+    }
+
+    .header-inner {
+        padding: 0 var(--spacing-sm);
+    }
+
+    .site-logo img {
+        height: 40px;
+    }
+}
+
+/* Print styles */
+@media print {
+    .no-print {
+        display: none !important;
+    }
+
+    .container {
+        max-width: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-size: 12pt;
+    }
+
+    a {
+        text-decoration: underline;
+    }
+
+    a[href]::after {
+        content: " (" attr(href) ")";
+    }
+}
