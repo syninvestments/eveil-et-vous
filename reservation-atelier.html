@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Réservez votre atelier d'éveil hebdomadaire - Mercredis et Samedis">
+    <title>Réserver un Atelier | Éveil & Vous</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.cdnfonts.com/css/myriad-pro" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+    <header style="background: white; box-shadow: 0 2px 20px rgba(0,0,0,0.08); padding: 20px 0; position: sticky; top: 0; z-index: 1000;">
+        <div class="container">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <a href="index.html" style="text-decoration: none;">
+                    <img src="images/logo.png" alt="Éveil & Vous" style="height: 50px; width: auto;">
+                </a>
+                
+                <nav style="display: flex; gap: 35px; align-items: center;">
+                    <a href="about.html" style="color: var(--text-color); text-decoration: none; font-weight: 500; transition: color 0.3s;">À Propos</a>
+                    <a href="activites.html" style="color: var(--text-color); text-decoration: none; font-weight: 500; transition: color 0.3s;">Activités</a>
+                    <a href="ateliers.html" style="color: var(--text-color); text-decoration: none; font-weight: 500; transition: color 0.3s;">Ateliers</a>
+                    <a href="contact.html" style="color: var(--text-color); text-decoration: none; font-weight: 500; transition: color 0.3s;">Contact</a>
+                    <a href="reservation.html" style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); color: white; padding: 12px 28px; border-radius: 25px; text-decoration: none; font-weight: 600; box-shadow: 0 5px 20px rgba(255, 181, 197, 0.3);">Réserver un séjour</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section style="background: linear-gradient(135deg, rgba(255, 181, 197, 0.15), rgba(181, 232, 224, 0.15)); padding: 100px 0 70px; text-align: center;">
+        <div class="container">
+            <h1 style="font-family: var(--font-heading); font-size: clamp(2.5rem, 5vw, 3.5rem); margin-bottom: 20px; color: var(--text-color);">
+                Réserver un Atelier
+            </h1>
+            <p style="font-size: 1.25rem; line-height: 1.7; color: #666;">
+                Choisissez votre formule et réservez votre place pour les prochains ateliers
+            </p>
+        </div>
+    </section>
+
+    <section style="padding: 80px 0;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 70px;">
+                <div style="background: linear-gradient(135deg, rgba(255, 181, 197, 0.1), rgba(255, 181, 197, 0.05)); padding: 40px; border-radius: 25px; text-align: center; border: 3px solid var(--primary-color);">
+                    <div style="font-size: 3.5rem; margin-bottom: 20px;">🎨</div>
+                    <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 15px; color: var(--text-color);">Ateliers Mercredis</h3>
+                    <p style="color: #666; font-size: 1.05rem; line-height: 1.6;">
+                        <strong>Enfants seuls</strong><br>
+                        10h-11h30 ou 14h30-16h<br>
+                        Cycle de 6 séances
+                    </p>
+                </div>
+                
+                <div style="background: linear-gradient(135deg, rgba(181, 232, 224, 0.1), rgba(181, 232, 224, 0.05)); padding: 40px; border-radius: 25px; text-align: center; border: 3px solid var(--secondary-color);">
+                    <div style="font-size: 3.5rem; margin-bottom: 20px;">👨‍👩‍👧</div>
+                    <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 15px; color: var(--text-color);">Ateliers Samedis</h3>
+                    <p style="color: #666; font-size: 1.05rem; line-height: 1.6;">
+                        <strong>Duo parent-enfant</strong><br>
+                        10h-11h30 ou 14h30-16h<br>
+                        À l'unité ou cycle de 4
+                    </p>
+                </div>
+                
+                <div style="background: linear-gradient(135deg, rgba(255, 229, 181, 0.1), rgba(255, 229, 181, 0.05)); padding: 40px; border-radius: 25px; text-align: center; border: 3px solid var(--accent-color);">
+                    <div style="font-size: 3.5rem; margin-bottom: 20px;">👥</div>
+                    <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 15px; color: var(--text-color);">Petits groupes</h3>
+                    <p style="color: #666; font-size: 1.05rem; line-height: 1.6;">
+                        <strong>Maximum 12 enfants</strong><br>
+                        Accompagnement personnalisé<br>
+                        Cadre bienveillant
+                    </p>
+                </div>
+            </div>
+
+            <div style="max-width: 900px; margin: 0 auto;">
+                <div style="background: white; padding: 50px; border-radius: 30px; box-shadow: 0 20px 60px rgba(0,0,0,0.1);">
+                    <h2 style="font-family: var(--font-heading); font-size: 2.2rem; margin-bottom: 30px; color: var(--text-color); text-align: center;">
+                        Formulaire de Réservation
+                    </h2>
+                    <p style="text-align: center; color: #666; margin-bottom: 40px; font-size: 1.05rem;">
+                        Remplissez ce formulaire pour réserver votre atelier. Nous vous recontacterons sous 24h pour confirmer votre inscription.
+                    </p>
+                    
+                    <!-- Vous pouvez intégrer ici un formulaire Fillout, Google Forms, ou autre système de réservation -->
+                    <div style="background: linear-gradient(135deg, rgba(255, 181, 197, 0.08), rgba(181, 232, 224, 0.08)); padding: 40px; border-radius: 20px; text-align: center; border: 2px dashed var(--primary-color);">
+                        <div style="font-size: 3rem; margin-bottom: 20px;">📝</div>
+                        <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 15px; color: var(--text-color);">
+                            Formulaire de réservation à intégrer
+                        </h3>
+                        <p style="color: #666; line-height: 1.7; margin-bottom: 25px;">
+                            Intégrez ici votre formulaire de réservation (Fillout, Google Forms, Typeform, etc.)<br>
+                            <em style="font-size: 0.95rem;">Sans paiement en ligne pour les ateliers</em>
+                        </p>
+                        
+                        <!-- Exemple de structure de formulaire simple -->
+                        <div style="background: white; padding: 35px; border-radius: 20px; text-align: left; max-width: 600px; margin: 0 auto;">
+                            <form>
+                                <div style="margin-bottom: 20px;">
+                                    <label style="display: block; font-weight: 600; margin-bottom: 8px; color: var(--text-color);">Type d'atelier *</label>
+                                    <select required style="width: 100%; padding: 12px 15px; border: 2px solid #E9ECEF; border-radius: 10px; font-family: var(--font-body); font-size: 1rem;">
+                                        <option value="">Choisissez un atelier</option>
+                                        <option value="mercredi">Mercredi - Enfants (14h-16h30)</option>
+                                        <option value="samedi">Samedi - Duo parent-enfant (10h-12h)</option>
+                                    </select>
+                                </div>
+                                
+                                <div style="margin-bottom: 20px;">
+                                    <label style="display: block; font-weight: 600; margin-bottom: 8px; color: var(--text-color);">Formule *</label>
+                                    <select required style="width: 100%; padding: 12px 15px; border: 2px solid #E9ECEF; border-radius: 10px; font-family: var(--font-body); font-size: 1rem;">
+                                        <option value="">Choisissez une formule</option>
+                                        <option value="unite">Séance à l'unité</option>
+                                        <option value="cycle4">Cycle de 4 séances (Samedi)</option>
+                                        <option value="cycle6">Cycle de 6 séances (Mercredi)</option>
+                                    </select>
+                                </div>
+                                
+                                <div style="margin-bottom: 20px;">
+                                    <label style="display: block; font-weight: 600; margin-bottom: 8px; color: var(--text-color);">Nom complet *</label>
+                                    <input type="text" required placeholder="Votre nom et prénom" style="width: 100%; padding: 12px 15px; border: 2px solid #E9ECEF; border-radius: 10px; font-family: var(--font-body); font-size: 1rem;">
+                                </div>
+                                
+                                <div style="margin-bottom: 20px;">
+                                    <label style="display: block; font-weight: 600; margin-bottom: 8px; color: var(--text-color);">Email *</label>
+                                    <input type="email" required placeholder="votre@email.com" style="width: 100%; padding: 12px 15px; border: 2px solid #E9ECEF; border-radius: 10px; font-family: var(--font-body); font-size: 1rem;">
+                                </div>
+                                
+                                <div style="margin-bottom: 20px;">
+                                    <label style="display: block; font-weight: 600; margin-bottom: 8px; color: var(--text-color);">Téléphone *</label>
+                                    <input type="tel" required placeholder="06 12 34 56 78" style="width: 100%; padding: 12px 15px; border: 2px solid #E9ECEF; border-radius: 10px; font-family: var(--font-body); font-size: 1rem;">
+                                </div>
+                                
+                                <div style="margin-bottom: 20px;">
+                                    <label style="display: block; font-weight: 600; margin-bottom: 8px; color: var(--text-color);">Prénom & âge de l'enfant *</label>
+                                    <input type="text" required placeholder="Ex: Lucas, 7 ans" style="width: 100%; padding: 12px 15px; border: 2px solid #E9ECEF; border-radius: 10px; font-family: var(--font-body); font-size: 1rem;">
+                                </div>
+                                
+                                <div style="margin-bottom: 25px;">
+                                    <label style="display: block; font-weight: 600; margin-bottom: 8px; color: var(--text-color);">Message (optionnel)</label>
+                                    <textarea rows="4" placeholder="Questions, besoins spécifiques..." style="width: 100%; padding: 12px 15px; border: 2px solid #E9ECEF; border-radius: 10px; font-family: var(--font-body); font-size: 1rem; resize: vertical;"></textarea>
+                                </div>
+                                
+                                <button type="submit" style="width: 100%; background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); color: white; padding: 16px; border: none; border-radius: 15px; font-family: var(--font-body); font-weight: 600; font-size: 1.1rem; cursor: pointer; box-shadow: 0 10px 30px rgba(255, 181, 197, 0.3); transition: all 0.3s;">
+                                    Envoyer ma demande
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 50px; text-align: center; background: rgba(255, 181, 197, 0.08); padding: 30px; border-radius: 20px;">
+                    <p style="font-size: 1.05rem; color: #666; line-height: 1.8;">
+                        <strong style="color: var(--primary-color);">💡 Bon à savoir :</strong><br>
+                        Une fois votre demande envoyée, nous vous recontacterons sous 24h pour confirmer les disponibilités et finaliser votre inscription. Le paiement s'effectuera sur place ou par virement après confirmation.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="background: var(--bg-light); padding: 60px 0;">
+        <div class="container">
+            <div style="max-width: 800px; margin: 0 auto;">
+                <h2 style="font-family: var(--font-heading); font-size: 2rem; text-align: center; margin-bottom: 40px; color: var(--text-color);">
+                    Questions fréquentes
+                </h2>
+                
+                <div style="display: grid; gap: 20px;">
+                    <div style="background: white; padding: 25px 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05);">
+                        <h4 style="font-family: var(--font-heading); font-size: 1.2rem; margin-bottom: 10px; color: var(--primary-color);">
+                            Puis-je réserver une seule séance ?
+                        </h4>
+                        <p style="color: #666; line-height: 1.7;">
+                            Oui, les ateliers du samedi sont disponibles à l'unité. Pour les mercredis, nous proposons principalement des cycles de 6 séances pour assurer une continuité pédagogique, mais des places à l'unité peuvent être disponibles selon les périodes.
+                        </p>
+                    </div>
+                    
+                    <div style="background: white; padding: 25px 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05);">
+                        <h4 style="font-family: var(--font-heading); font-size: 1.2rem; margin-bottom: 10px; color: var(--primary-color);">
+                            Que dois-je prévoir pour mon enfant ?
+                        </h4>
+                        <p style="color: #666; line-height: 1.7;">
+                            Une tenue confortable, des chaussures adaptées pour l'extérieur, et un goûter si l'atelier se termine après 16h. Nous fournissons tout le matériel nécessaire aux activités.
+                        </p>
+                    </div>
+                    
+                    <div style="background: white; padding: 25px 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05);">
+                        <h4 style="font-family: var(--font-heading); font-size: 1.2rem; margin-bottom: 10px; color: var(--primary-color);">
+                            Comment se passe l'annulation ?
+                        </h4>
+                        <p style="color: #666; line-height: 1.7;">
+                            Les annulations sont possibles jusqu'à 48h avant l'atelier. Pour les cycles, une séance annulée peut être reportée sur un autre créneau selon les disponibilités.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); padding: 60px 0; text-align: center;">
+        <div class="container">
+            <div style="max-width: 600px; margin: 0 auto;">
+                <h2 style="font-family: var(--font-heading); font-size: 2rem; color: white; margin-bottom: 15px;">
+                    Besoin d'aide ?
+                </h2>
+                <p style="color: rgba(255,255,255,0.95); font-size: 1.1rem; margin-bottom: 25px;">
+                    N'hésitez pas à nous contacter pour toute question
+                </p>
+                <a href="contact.html" style="display: inline-block; background: white; color: var(--primary-color); padding: 15px 35px; border-radius: 25px; text-decoration: none; font-weight: 600; font-size: 1.05rem; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+                    Nous contacter
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer style="background: var(--footer-bg); color: var(--footer-text); padding: 60px 0 20px;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px;">
+                <div>
+                    <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 15px;">Éveil & Vous</h3>
+                    <p style="color: rgba(255,255,255,0.7); line-height: 1.6;">Éveil en famille au milieu de la nature</p>
+                </div>
+                <div>
+                    <h3 style="font-family: var(--font-heading); font-size: 1.2rem; margin-bottom: 15px;">Pages</h3>
+                    <p><a href="about.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">À Propos</a></p>
+                    <p><a href="activites.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">Activités</a></p>
+                    <p><a href="ateliers.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">Ateliers</a></p>
+                    <p><a href="reservation.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">Réserver</a></p>
+                    <p><a href="contact.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">Contact</a></p>
+                </div>
+                <div>
+                    <h3 style="font-family: var(--font-heading); font-size: 1.2rem; margin-bottom: 15px;">Contact</h3>
+                    <p style="color: rgba(255,255,255,0.7); line-height: 1.6;">Limoux, Aude (11)<br>contact@eveil-vous.fr</p>
+                </div>
+                <div>
+                    <h3 style="font-family: var(--font-heading); font-size: 1.2rem; margin-bottom: 15px;">Suivez-nous</h3>
+                    <div style="display: flex; gap: 15px;">
+                        <a href="#" style="color: rgba(255,255,255,0.7); font-size: 1.3rem;"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" style="color: rgba(255,255,255,0.7); font-size: 1.3rem;"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; text-align: center;">
+                <p style="color: rgba(255,255,255,0.5);">&copy; 2025 Éveil & Vous - Tous droits réservés</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,17 +1,21 @@
 :root {
-    /* Couleurs principales */
-    --primary-color: #FF8B94;
-    --primary-dark: #FF6B7A;
-    --secondary-color: #4ECDC4;
-    --accent-color: #FFE66D;
-    --accent-light: #FFF4CC;
+    /* Couleurs principales - Palette inspirée des pictos Éveil & Vous */
+    --primary-color: #F4A6B8;      /* Rose doux (ton picto) */
+    --primary-dark: #E88FA5;
+    --secondary-color: #9DD9CE;    /* Turquoise menthe (ton picto) */
+    --accent-color: #FFD699;       /* Pêche dorée (ton picto) */
+    --accent-light: #FFF0DB;
+    --purple: #C5A8E0;             /* Lavande douce (ton picto) */
+    --orange: #FFBB99;             /* Corail pastel (ton picto) */
+    --green: #B8E6B8;              /* Vert nature (ton picto) */
+    --blue: #A8D5E8;               /* Bleu ciel (ton picto) */
     
     /* Couleurs neutres */
     --text-color: #2D3436;
     --text-light: #636E72;
     --heading-color: #1A1A2E;
     --bg-color: #FFFFFF;
-    --bg-light: #F8F9FA;
+    --bg-light: #FFF9F5;
     --bg-cream: #FFF9F0;
     --border-color: #E9ECEF;
     
@@ -19,14 +23,14 @@
     --footer-bg: #1A1A2E;
     --footer-text: #FFFFFF;
 
-    /* Dégradés modernes */
-    --gradient-hero: linear-gradient(135deg, #FFE66D 0%, #FF8B94 50%, #4ECDC4 100%);
+    /* Dégradés modernes - Inspirés des pictos */
+    --gradient-hero: linear-gradient(135deg, #FFD699 0%, #F4A6B8 50%, #9DD9CE 100%);
     --gradient-soft: linear-gradient(180deg, #FFF9F0 0%, #FFFFFF 100%);
     --gradient-overlay: linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
 
-    /* Typographie */
-    --font-heading: 'Playfair Display', serif;
-    --font-body: 'Open Sans', sans-serif;
+    /* Typographie - Myriad Pro */
+    --font-heading: 'Myriad Pro', 'Myriad', sans-serif;
+    --font-body: 'Myriad Pro', 'Myriad', sans-serif;
     --font-min-size: 1rem;
     --font-max-size: 4rem;
 

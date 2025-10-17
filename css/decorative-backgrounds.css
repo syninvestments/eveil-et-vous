@@ -1,0 +1,263 @@
+/* Fonds décoratifs avec les pictos de la marque Éveil & Vous */
+
+/* Section Hero avec pictos en arrière-plan */
+.hero-with-pictos {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-with-pictos::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: 5%;
+    width: 200px;
+    height: 200px;
+    background-image: url('../images/pictos/ObjectifsSejourPicto.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.15;
+    z-index: 0;
+}
+
+.hero-with-pictos::after {
+    content: '';
+    position: absolute;
+    bottom: 10%;
+    left: 8%;
+    width: 150px;
+    height: 150px;
+    background-image: url('../images/pictos/NotrePhilosophiePictos.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.12;
+    z-index: 0;
+}
+
+/* Section Concept avec pictos */
+.section-with-experience-picto {
+    position: relative;
+    overflow: hidden;
+}
+
+.section-with-experience-picto::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -80px;
+    transform: translateY(-50%);
+    width: 250px;
+    height: 250px;
+    background-image: url('../images/pictos/Picto-MonExperience.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.08;
+    z-index: 0;
+}
+
+/* Section Ateliers avec pictos */
+.ateliers-section-bg {
+    position: relative;
+    overflow: hidden;
+}
+
+.ateliers-section-bg::before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    width: 180px;
+    height: 180px;
+    background-image: url('../images/pictos/NotrePhilosophiePictos.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.ateliers-section-bg::after {
+    content: '';
+    position: absolute;
+    bottom: 15%;
+    right: 8%;
+    width: 200px;
+    height: 200px;
+    background-image: url('../images/pictos/ObjectifsSejourPicto.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.1;
+    z-index: 0;
+}
+
+/* Bulles décoratives inspirées des pictos */
+.bubble-decoration {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.6;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.bubble-decoration.pink {
+    background: radial-gradient(circle, rgba(244, 166, 184, 0.5) 0%, rgba(244, 166, 184, 0.15) 50%, rgba(244, 166, 184, 0) 70%);
+}
+
+.bubble-decoration.turquoise {
+    background: radial-gradient(circle, rgba(157, 217, 206, 0.5) 0%, rgba(157, 217, 206, 0.15) 50%, rgba(157, 217, 206, 0) 70%);
+}
+
+.bubble-decoration.yellow {
+    background: radial-gradient(circle, rgba(255, 214, 153, 0.5) 0%, rgba(255, 214, 153, 0.15) 50%, rgba(255, 214, 153, 0) 70%);
+}
+
+.bubble-decoration.purple {
+    background: radial-gradient(circle, rgba(197, 168, 224, 0.5) 0%, rgba(197, 168, 224, 0.15) 50%, rgba(197, 168, 224, 0) 70%);
+}
+
+.bubble-decoration.orange {
+    background: radial-gradient(circle, rgba(255, 187, 153, 0.5) 0%, rgba(255, 187, 153, 0.15) 50%, rgba(255, 187, 153, 0) 70%);
+}
+
+.bubble-decoration.green {
+    background: radial-gradient(circle, rgba(184, 230, 184, 0.5) 0%, rgba(184, 230, 184, 0.15) 50%, rgba(184, 230, 184, 0) 70%);
+}
+
+/* Positionnement des bulles */
+.bubble-1 {
+    width: 400px;
+    height: 400px;
+    top: 50px; /* Changé de -150px pour éviter l'espace au-dessus */
+    right: 5%;
+}
+
+.bubble-2 {
+    width: 300px;
+    height: 300px;
+    top: 40%;
+    left: -50px;
+}
+
+.bubble-3 {
+    width: 350px;
+    height: 350px;
+    bottom: 5%;
+    right: 10%;
+}
+
+.bubble-4 {
+    width: 280px;
+    height: 280px;
+    bottom: -100px;
+    left: 15%;
+}
+
+/* Assurer que le contenu reste au-dessus */
+.hero-with-pictos > *,
+.section-with-experience-picto > *,
+.ateliers-section-bg > * {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-with-pictos,
+.section-with-experience-picto,
+.ateliers-section-bg {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Bulles via pseudo-éléments pour le hero */
+.hero-with-pictos .container::before {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    top: 100px;
+    right: 5%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(244, 166, 184, 0.5) 0%, rgba(244, 166, 184, 0.15) 50%, rgba(244, 166, 184, 0) 70%);
+    z-index: 0;
+    pointer-events: none;
+    animation: float-slow 12s ease-in-out infinite;
+}
+
+.hero-with-pictos .container::after {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    top: 50%;
+    left: -50px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(157, 217, 206, 0.5) 0%, rgba(157, 217, 206, 0.15) 50%, rgba(157, 217, 206, 0) 70%);
+    z-index: 0;
+    pointer-events: none;
+    animation: float-slow 12s ease-in-out infinite 3s;
+}
+
+/* Animation subtile pour les pictos */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px) scale(1);
+    }
+    50% {
+        transform: translateY(-20px) scale(1.05);
+    }
+}
+
+@keyframes float-slow {
+    0%, 100% {
+        transform: translateY(0px) translateX(0px);
+    }
+    33% {
+        transform: translateY(-15px) translateX(10px);
+    }
+    66% {
+        transform: translateY(10px) translateX(-10px);
+    }
+}
+
+.bubble-decoration {
+    animation: float-slow 12s ease-in-out infinite;
+}
+
+.bubble-1 {
+    animation-delay: 0s;
+}
+
+.bubble-2 {
+    animation-delay: 3s;
+}
+
+.bubble-3 {
+    animation-delay: 6s;
+}
+
+.bubble-4 {
+    animation-delay: 9s;
+}
+
+.hero-with-pictos::before,
+.hero-with-pictos::after {
+    animation: float 6s ease-in-out infinite;
+}
+
+.section-with-experience-picto::before {
+    animation: float 8s ease-in-out infinite;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-with-pictos::before,
+    .hero-with-pictos::after,
+    .section-with-experience-picto::before,
+    .ateliers-section-bg::before,
+    .ateliers-section-bg::after {
+        display: none;
+    }
+    
+    .bubble-decoration {
+        width: 150px !important;
+        height: 150px !important;
+    }
+}

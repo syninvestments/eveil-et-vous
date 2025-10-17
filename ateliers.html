@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ateliers d'éveil hebdomadaires pour enfants et familles - Mercredis et Samedis à Limoux">
+    <title>Ateliers Hebdomadaires | Éveil & Vous</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.cdnfonts.com/css/myriad-pro" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/decorative-backgrounds.css">
+    
+    <style>
+        :root {
+            --rose: #F4A6B8;
+            --turquoise: #9DD9CE;
+            --peche: #FFD699;
+            --lavande: #C5A8E0;
+            --corail: #FFBB99;
+            --vert: #B8E6B8;
+            --bleu: #A8D5E8;
+        }
+        
+        body {
+            font-family: 'Myriad Pro', sans-serif;
+        }
+        
+        .floating-bubble {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: float 8s ease-in-out infinite;
+            pointer-events: none;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) translateX(0px); }
+            33% { transform: translateY(-20px) translateX(15px); }
+            66% { transform: translateY(10px) translateX(-15px); }
+        }
+        
+        .gradient-card {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .gradient-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 70px rgba(0,0,0,0.12);
+        }
+        
+        .gradient-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, var(--rose), var(--turquoise), var(--peche), var(--lavande));
+        }
+        
+        .theme-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+        
+        .theme-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+        
+        .theme-card.creative { border-color: var(--corail); }
+        .theme-card.sensory { border-color: var(--turquoise); }
+        .theme-card.yoga { border-color: var(--lavande); }
+        .theme-card.emotion { border-color: var(--rose); }
+        .theme-card.nature { border-color: var(--vert); }
+        
+        .icon-badge {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        
+        .workshop-banner {
+            background: linear-gradient(135deg, rgba(244, 166, 184, 0.15), rgba(157, 217, 206, 0.15));
+            border-radius: 30px;
+            padding: 50px;
+            margin-bottom: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Slider Responsive */
+        @media (max-width: 768px) {
+            .slider-prev, .slider-next {
+                left: 10px !important;
+                right: auto !important;
+                width: 40px !important;
+                height: 40px !important;
+                font-size: 1.2rem !important;
+            }
+            
+            .slider-next {
+                left: auto !important;
+                right: 10px !important;
+            }
+            
+            .theme-slide {
+                padding: 0 5px !important;
+            }
+            
+            .theme-card {
+                padding: 25px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header style="background: white; box-shadow: 0 2px 20px rgba(0,0,0,0.08); padding: 20px 0; position: sticky; top: 0; z-index: 1000;">
+        <div class="container">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <a href="index.html" style="text-decoration: none;">
+                    <img src="images/logo.png" alt="Éveil & Vous" style="height: 50px; width: auto;">
+                </a>
+                
+                <nav style="display: flex; gap: 35px; align-items: center;">
+                    <a href="about.html" style="color: #2D3436; text-decoration: none; font-weight: 500; transition: color 0.3s;">À Propos</a>
+                    <a href="activites.html" style="color: #2D3436; text-decoration: none; font-weight: 500; transition: color 0.3s;">Activités</a>
+                    <a href="ateliers.html" style="color: var(--rose); text-decoration: none; font-weight: 600; border-bottom: 2px solid var(--rose);">Ateliers</a>
+                    <a href="contact.html" style="color: #2D3436; text-decoration: none; font-weight: 500; transition: color 0.3s;">Contact</a>
+                    <a href="reservation.html" style="background: linear-gradient(135deg, var(--rose), var(--turquoise)); color: white; padding: 12px 28px; border-radius: 25px; text-decoration: none; font-weight: 600; box-shadow: 0 5px 20px rgba(244, 166, 184, 0.3);">Réserver un séjour</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero-with-pictos" style="background: linear-gradient(135deg, #FFF4E6 0%, #F0FFFE 50%, #F5F0FF 100%); padding: 100px 0; text-align: center; position: relative; overflow: hidden;">
+        <!-- Bulles décoratives -->
+        <div class="floating-bubble" style="width: 300px; height: 300px; background: radial-gradient(circle, rgba(244, 166, 184, 0.4), transparent); top: 50px; right: 10%; animation-delay: 0s;"></div>
+        <div class="floating-bubble" style="width: 200px; height: 200px; background: radial-gradient(circle, rgba(157, 217, 206, 0.4), transparent); bottom: 80px; left: 5%; animation-delay: 2s;"></div>
+        <div class="floating-bubble" style="width: 250px; height: 250px; background: radial-gradient(circle, rgba(197, 168, 224, 0.4), transparent); top: 30%; left: 15%; animation-delay: 4s;"></div>
+        
+        <div class="container" style="position: relative; z-index: 1;">
+            <div style="display: inline-block; background: white; padding: 10px 25px; border-radius: 50px; margin-bottom: 25px; box-shadow: 0 8px 25px rgba(0,0,0,0.1);">
+                <span style="background: linear-gradient(90deg, var(--rose), var(--turquoise), var(--peche)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700; font-size: 1rem;">✨ ATELIERS HEBDOMADAIRES</span>
+            </div>
+            <h1 style="font-family: 'Myriad Pro', sans-serif; font-size: clamp(2.5rem, 6vw, 4.5rem); margin-bottom: 30px; color: #1A1A2E; font-weight: 700; line-height: 1.2;">
+                Éveillez Vos Enfants<br>
+                <span style="background: linear-gradient(90deg, var(--rose), var(--turquoise)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Chaque Semaine</span>
+            </h1>
+            <p style="font-size: 1.35rem; line-height: 1.8; color: #555; max-width: 800px; margin: 0 auto 40px;">
+                Des ateliers créatifs et sensoriels pour les enfants seuls le mercredi,<br>
+                et des moments privilégiés en duo parent-enfant le samedi
+            </p>
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                <a href="#mercredis" style="background: linear-gradient(135deg, var(--corail), var(--peche)); color: white; padding: 18px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; font-size: 1.1rem; box-shadow: 0 10px 30px rgba(255, 187, 153, 0.4); transition: transform 0.3s;">
+                    📅 Ateliers du Mercredi
+                </a>
+                <a href="#samedis" style="background: linear-gradient(135deg, var(--turquoise), var(--bleu)); color: white; padding: 18px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; font-size: 1.1rem; box-shadow: 0 10px 30px rgba(157, 217, 206, 0.4); transition: transform 0.3s;">
+                    👨‍👩‍👧 Ateliers du Samedi
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ATELIERS DU MERCREDI -->
+    <section id="mercredis" class="section-with-experience-picto" style="padding: 100px 0; background: white;">
+        <div class="container">
+            <div class="workshop-banner" style="background: linear-gradient(135deg, rgba(255, 187, 153, 0.12), rgba(255, 214, 153, 0.12));">
+                <div style="text-align: center; margin-bottom: 40px;">
+                    <div class="icon-badge" style="background: linear-gradient(135deg, var(--corail), var(--peche)); margin: 0 auto;">🎨</div>
+                    <h2 style="font-size: clamp(2.2rem, 4vw, 3.5rem); margin-bottom: 15px; color: #1A1A2E; font-weight: 700;">Ateliers du Mercredi</h2>
+                    <p style="font-size: 1.2rem; color: #555; max-width: 600px; margin: 0 auto;">
+                        Enfants de 4 à 12 ans | Exploration en autonomie
+                    </p>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; margin-bottom: 40px;">
+                    <div style="background: white; padding: 25px; border-radius: 20px; text-align: center; box-shadow: 0 8px 25px rgba(0,0,0,0.06);">
+                        <div style="font-size: 2.5rem; margin-bottom: 10px;">⏰</div>
+                        <h4 style="font-size: 1.1rem; margin-bottom: 8px; color: #1A1A2E;">Horaires</h4>
+                        <p style="color: #666; font-size: 0.95rem;">10h-11h30<br>ou 14h30-16h</p>
+                    </div>
+                    <div style="background: white; padding: 25px; border-radius: 20px; text-align: center; box-shadow: 0 8px 25px rgba(0,0,0,0.06);">
+                        <div style="font-size: 2.5rem; margin-bottom: 10px;">⏱️</div>
+                        <h4 style="font-size: 1.1rem; margin-bottom: 8px; color: #1A1A2E;">Durée</h4>
+                        <p style="color: #666; font-size: 0.95rem;">1h30<br>par séance</p>
+                    </div>
+                </div>
+                
+                <div style="text-align: center;">
+                    <a href="reservation-atelier.html" style="display: inline-block; background: linear-gradient(135deg, var(--corail), var(--peche)); color: white; padding: 18px 45px; border-radius: 30px; text-decoration: none; font-weight: 600; font-size: 1.15rem; box-shadow: 0 10px 30px rgba(255, 187, 153, 0.4); transition: transform 0.3s;">
+                        📝 Réserver un atelier du Mercredi
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Thématiques Mercredi -->
+            <h3 style="text-align: center; font-size: 2.2rem; margin-bottom: 50px; color: #1A1A2E;">
+                5 Thématiques d'Éveil 🌈
+            </h3>
+            
+            <!-- Slider Container -->
+            <div style="position: relative; max-width: 900px; margin: 0 auto;">
+                <!-- Slider Wrapper -->
+                <div class="themes-slider-wrapper" style="overflow: hidden; border-radius: 30px;">
+                    <div class="themes-slider" style="display: flex; transition: transform 0.5s ease;">
+                        <div class="theme-slide" style="min-width: 100%; padding: 0 10px; box-sizing: border-box;">
+                            <div class="theme-card creative" style="margin: 0;">
+                                <div class="icon-badge" style="background: linear-gradient(135deg, var(--corail), #FF9A76);">🎨</div>
+                                <h4 style="font-size: 1.5rem; margin-bottom: 15px; color: #1A1A2E;">Éveil Créatif</h4>
+                                <p style="color: #666; line-height: 1.7;">Arts plastiques, musique, expression artistique pour libérer la créativité et l'imagination de votre enfant.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="theme-slide" style="min-width: 100%; padding: 0 10px; box-sizing: border-box;">
+                            <div class="theme-card sensory" style="margin: 0;">
+                                <div class="icon-badge" style="background: linear-gradient(135deg, var(--turquoise), #7ECFC0);">👃</div>
+                                <h4 style="font-size: 1.5rem; margin-bottom: 15px; color: #1A1A2E;">Éveil Sensoriel</h4>
+                                <p style="color: #666; line-height: 1.7;">Découverte des 5 sens à travers des expériences tactiles, olfactives, gustatives, visuelles et auditives.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="theme-slide" style="min-width: 100%; padding: 0 10px; box-sizing: border-box;">
+                            <div class="theme-card yoga" style="margin: 0;">
+                                <div class="icon-badge" style="background: linear-gradient(135deg, var(--lavande), #B593D6);">🧘</div>
+                                <h4 style="font-size: 1.5rem; margin-bottom: 15px; color: #1A1A2E;">Yoga & Relaxation</h4>
+                                <p style="color: #666; line-height: 1.7;">Postures ludiques, exercices de respiration et techniques de retour au calme adaptées aux enfants.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="theme-slide" style="min-width: 100%; padding: 0 10px; box-sizing: border-box;">
+                            <div class="theme-card emotion" style="margin: 0;">
+                                <div class="icon-badge" style="background: linear-gradient(135deg, var(--rose), #EA8FA3);">❤️</div>
+                                <h4 style="font-size: 1.5rem; margin-bottom: 15px; color: #1A1A2E;">Gestion des Émotions</h4>
+                                <p style="color: #666; line-height: 1.7;">Identifier, nommer et accueillir ses émotions grâce à des outils concrets et ludiques.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="theme-slide" style="min-width: 100%; padding: 0 10px; box-sizing: border-box;">
+                            <div class="theme-card nature" style="margin: 0;">
+                                <div class="icon-badge" style="background: linear-gradient(135deg, var(--vert), #9FD99F);">🌳</div>
+                                <h4 style="font-size: 1.5rem; margin-bottom: 15px; color: #1A1A2E;">Activités Nature</h4>
+                                <p style="color: #666; line-height: 1.7;">Jardinage, land art, exploration extérieure pour se reconnecter à la nature et à ses bienfaits.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Navigation Arrows -->
+                <button class="slider-prev" onclick="moveSlider('mercredi', -1)" style="position: absolute; left: -60px; top: 50%; transform: translateY(-50%); background: white; border: none; width: 50px; height: 50px; border-radius: 50%; box-shadow: 0 5px 20px rgba(0,0,0,0.15); cursor: pointer; font-size: 1.5rem; color: var(--corail); transition: all 0.3s; z-index: 10;">
+                    ‹
+                </button>
+                <button class="slider-next" onclick="moveSlider('mercredi', 1)" style="position: absolute; right: -60px; top: 50%; transform: translateY(-50%); background: white; border: none; width: 50px; height: 50px; border-radius: 50%; box-shadow: 0 5px 20px rgba(0,0,0,0.15); cursor: pointer; font-size: 1.5rem; color: var(--corail); transition: all 0.3s; z-index: 10;">
+                    ›
+                </button>
+                
+                <!-- Dots Indicators -->
+                <div class="slider-dots" style="display: flex; justify-content: center; gap: 10px; margin-top: 30px;">
+                    <span class="dot active" onclick="goToSlide('mercredi', 0)" style="width: 12px; height: 12px; border-radius: 50%; background: var(--corail); cursor: pointer; transition: all 0.3s;"></span>
+                    <span class="dot" onclick="goToSlide('mercredi', 1)" style="width: 12px; height: 12px; border-radius: 50%; background: #ddd; cursor: pointer; transition: all 0.3s;"></span>
+                    <span class="dot" onclick="goToSlide('mercredi', 2)" style="width: 12px; height: 12px; border-radius: 50%; background: #ddd; cursor: pointer; transition: all 0.3s;"></span>
+                    <span class="dot" onclick="goToSlide('mercredi', 3)" style="width: 12px; height: 12px; border-radius: 50%; background: #ddd; cursor: pointer; transition: all 0.3s;"></span>
+                    <span class="dot" onclick="goToSlide('mercredi', 4)" style="width: 12px; height: 12px; border-radius: 50%; background: #ddd; cursor: pointer; transition: all 0.3s;"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ATELIERS DU SAMEDI -->
+    <section id="samedis" class="ateliers-section-bg" style="padding: 100px 0; background: linear-gradient(180deg, white 0%, rgba(157, 217, 206, 0.05) 100%);">
+        <div class="container">
+            <div style="background: linear-gradient(135deg, rgba(157, 217, 206, 0.12), rgba(168, 213, 232, 0.12)); border-radius: 30px; padding: 50px; margin-bottom: 50px;">
+                <div style="text-align: center; margin-bottom: 40px;">
+                    <div class="icon-badge" style="background: linear-gradient(135deg, var(--turquoise), var(--bleu)); margin: 0 auto;">👨‍👩‍👧</div>
+                    <h2 style="font-size: clamp(2.2rem, 4vw, 3.5rem); margin-bottom: 15px; color: #1A1A2E; font-weight: 700;">Ateliers du Samedi</h2>
+                    <p style="font-size: 1.2rem; color: #555; max-width: 600px; margin: 0 auto;">
+                        Duo parent-enfant | Moments partagés et complicité
+                    </p>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; margin-bottom: 40px;">
+                    <div style="background: white; padding: 25px; border-radius: 20px; text-align: center; box-shadow: 0 8px 25px rgba(0,0,0,0.06);">
+                        <div style="font-size: 2.5rem; margin-bottom: 10px;">⏰</div>
+                        <h4 style="font-size: 1.1rem; margin-bottom: 8px; color: #1A1A2E;">Horaires</h4>
+                        <p style="color: #666; font-size: 0.95rem;">10h-11h30<br>ou 14h30-16h</p>
+                    </div>
+                    <div style="background: white; padding: 25px; border-radius: 20px; text-align: center; box-shadow: 0 8px 25px rgba(0,0,0,0.06);">
+                        <div style="font-size: 2.5rem; margin-bottom: 10px;">⏱️</div>
+                        <h4 style="font-size: 1.1rem; margin-bottom: 8px; color: #1A1A2E;">Durée</h4>
+                        <p style="color: #666; font-size: 0.95rem;">1h30<br>par séance</p>
+                    </div>
+                </div>
+                
+                <div style="text-align: center;">
+                    <a href="reservation-atelier.html" style="display: inline-block; background: linear-gradient(135deg, var(--turquoise), var(--bleu)); color: white; padding: 18px 45px; border-radius: 30px; text-decoration: none; font-weight: 600; font-size: 1.15rem; box-shadow: 0 10px 30px rgba(157, 217, 206, 0.4); transition: transform 0.3s;">
+                        📝 Réserver un atelier du Samedi
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Thématiques Samedi -->
+            <h3 style="text-align: center; font-size: 2.2rem; margin-bottom: 30px; color: #1A1A2E;">
+                Les Mêmes Thématiques, en Duo 💕
+            </h3>
+            <p style="text-align: center; font-size: 1.15rem; color: #666; max-width: 700px; margin: 0 auto 50px; line-height: 1.7;">
+                Partagez des moments privilégiés avec votre enfant autour des mêmes activités, adaptées pour créer du lien et des rituels à reproduire à la maison.
+            </p>
+            
+            <!-- Slider Container -->
+            <div style="position: relative; max-width: 900px; margin: 0 auto;">
+                <!-- Slider Wrapper -->
+                <div class="themes-slider-wrapper" style="overflow: hidden; border-radius: 30px;">
+                    <div class="themes-slider samedi-slider" style="display: flex; transition: transform 0.5s ease;">
+                        <div class="theme-slide" style="min-width: 100%; padding: 0 10px; box-sizing: border-box;">
+                            <div class="theme-card creative" style="margin: 0;">
+                                <div class="icon-badge" style="background: linear-gradient(135deg, var(--corail), #FF9A76);">🎨</div>
+                                <h4 style="font-size: 1.5rem; margin-bottom: 15px; color: #1A1A2E;">Éveil Créatif</h4>
+                                <p style="color: #666; line-height: 1.7;">Activités artistiques partagées pour stimuler l'imagination et créer ensemble des œuvres uniques.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="theme-slide" style="min-width: 100%; padding: 0 10px; box-sizing: border-box;">
+                            <div class="theme-card sensory" style="margin: 0;">
+                                <div class="icon-badge" style="background: linear-gradient(135deg, var(--turquoise), #7ECFC0);">👃</div>
+                                <h4 style="font-size: 1.5rem; margin-bottom: 15px; color: #1A1A2E;">Éveil Sensoriel</h4>
+                                <p style="color: #666; line-height: 1.7;">Exploration des 5 sens ensemble à travers des expériences ludiques et enrichissantes en binôme.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="theme-slide" style="min-width: 100%; padding: 0 10px; box-sizing: border-box;">
+                            <div class="theme-card yoga" style="margin: 0;">
+                                <div class="icon-badge" style="background: linear-gradient(135deg, var(--lavande), #B593D6);">🧘</div>
+                                <h4 style="font-size: 1.5rem; margin-bottom: 15px; color: #1A1A2E;">Yoga & Relaxation</h4>
+                                <p style="color: #666; line-height: 1.7;">Postures en duo, exercices de respiration partagés et rituels de détente à reproduire à la maison.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="theme-slide" style="min-width: 100%; padding: 0 10px; box-sizing: border-box;">
+                            <div class="theme-card emotion" style="margin: 0;">
+                                <div class="icon-badge" style="background: linear-gradient(135deg, var(--rose), #EA8FA3);">❤️</div>
+                                <h4 style="font-size: 1.5rem; margin-bottom: 15px; color: #1A1A2E;">Gestion des Émotions</h4>
+                                <p style="color: #666; line-height: 1.7;">Communication bienveillante et vocabulaire émotionnel pour mieux se comprendre au quotidien.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="theme-slide" style="min-width: 100%; padding: 0 10px; box-sizing: border-box;">
+                            <div class="theme-card nature" style="margin: 0;">
+                                <div class="icon-badge" style="background: linear-gradient(135deg, var(--vert), #9FD99F);">🌳</div>
+                                <h4 style="font-size: 1.5rem; margin-bottom: 15px; color: #1A1A2E;">Activités Nature</h4>
+                                <p style="color: #666; line-height: 1.7;">Connexion à la nature en duo : jardinage, land art et exploration pour renforcer le lien.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Navigation Arrows -->
+                <button class="slider-prev" onclick="moveSlider('samedi', -1)" style="position: absolute; left: -60px; top: 50%; transform: translateY(-50%); background: white; border: none; width: 50px; height: 50px; border-radius: 50%; box-shadow: 0 5px 20px rgba(0,0,0,0.15); cursor: pointer; font-size: 1.5rem; color: var(--turquoise); transition: all 0.3s; z-index: 10;">
+                    ‹
+                </button>
+                <button class="slider-next" onclick="moveSlider('samedi', 1)" style="position: absolute; right: -60px; top: 50%; transform: translateY(-50%); background: white; border: none; width: 50px; height: 50px; border-radius: 50%; box-shadow: 0 5px 20px rgba(0,0,0,0.15); cursor: pointer; font-size: 1.5rem; color: var(--turquoise); transition: all 0.3s; z-index: 10;">
+                    ›
+                </button>
+                
+                <!-- Dots Indicators -->
+                <div class="slider-dots samedi-dots" style="display: flex; justify-content: center; gap: 10px; margin-top: 30px;">
+                    <span class="dot active" onclick="goToSlide('samedi', 0)" style="width: 12px; height: 12px; border-radius: 50%; background: var(--turquoise); cursor: pointer; transition: all 0.3s;"></span>
+                    <span class="dot" onclick="goToSlide('samedi', 1)" style="width: 12px; height: 12px; border-radius: 50%; background: #ddd; cursor: pointer; transition: all 0.3s;"></span>
+                    <span class="dot" onclick="goToSlide('samedi', 2)" style="width: 12px; height: 12px; border-radius: 50%; background: #ddd; cursor: pointer; transition: all 0.3s;"></span>
+                    <span class="dot" onclick="goToSlide('samedi', 3)" style="width: 12px; height: 12px; border-radius: 50%; background: #ddd; cursor: pointer; transition: all 0.3s;"></span>
+                    <span class="dot" onclick="goToSlide('samedi', 4)" style="width: 12px; height: 12px; border-radius: 50%; background: #ddd; cursor: pointer; transition: all 0.3s;"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- TÉMOIGNAGES -->
+    <section class="with-bubbles" style="background: white; padding: 100px 0; position: relative; overflow: hidden;">
+        <!-- Bulles décoratives -->
+        <div class="bubble-decoration pink bubble-1"></div>
+        <div class="bubble-decoration turquoise bubble-2"></div>
+        <div class="bubble-decoration purple bubble-3"></div>
+        
+        <div class="container" style="position: relative; z-index: 1;">
+            <h2 style="text-align: center; font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 20px; color: #1A1A2E; font-weight: 700;">
+                Ils ont testé nos ateliers 💬
+            </h2>
+            <p style="text-align: center; font-size: 1.15rem; color: #666; margin-bottom: 60px;">
+                Découvrez l'expérience de nos familles
+            </p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 35px;">
+                <div class="gradient-card">
+                    <div style="color: var(--peche); font-size: 2rem; margin-bottom: 15px;">★★★★★</div>
+                    <p style="font-size: 1.08rem; line-height: 1.8; color: #555; margin-bottom: 25px; font-style: italic;">
+                        "Les ateliers du mercredi sont un vrai moment de bonheur pour mon fils. Il revient toujours avec des idées créatives et tellement de fierté !"
+                    </p>
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <div style="width: 50px; height: 50px; border-radius: 50%; background: linear-gradient(135deg, var(--rose), var(--peche)); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.2rem;">J</div>
+                        <div>
+                            <div style="font-weight: 700; color: #1A1A2E;">Julie</div>
+                            <div style="font-size: 0.9rem; color: #888;">Maman d'Antoine, 6 ans</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gradient-card">
+                    <div style="color: var(--peche); font-size: 2rem; margin-bottom: 15px;">★★★★★</div>
+                    <p style="font-size: 1.08rem; line-height: 1.8; color: #555; margin-bottom: 25px; font-style: italic;">
+                        "Le samedi matin est devenu notre rituel père-fille. On apprend ensemble et on crée des souvenirs précieux qui resteront gravés."
+                    </p>
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <div style="width: 50px; height: 50px; border-radius: 50%; background: linear-gradient(135deg, var(--turquoise), var(--bleu)); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.2rem;">D</div>
+                        <div>
+                            <div style="font-weight: 700; color: #1A1A2E;">David</div>
+                            <div style="font-size: 0.9rem; color: #888;">Papa de Chloé, 8 ans</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gradient-card">
+                    <div style="color: var(--peche); font-size: 2rem; margin-bottom: 15px;">★★★★★</div>
+                    <p style="font-size: 1.08rem; line-height: 1.8; color: #555; margin-bottom: 25px; font-style: italic;">
+                        "Les outils appris pendant les ateliers nous aident vraiment au quotidien, surtout pour la gestion des émotions. Merci pour cette belle découverte !"
+                    </p>
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <div style="width: 50px; height: 50px; border-radius: 50%; background: linear-gradient(135deg, var(--lavande), var(--rose)); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.2rem;">M</div>
+                        <div>
+                            <div style="font-weight: 700; color: #1A1A2E;">Marine & Julien</div>
+                            <div style="font-size: 0.9rem; color: #888;">Parents de Léa, 5 ans</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section style="background: linear-gradient(135deg, var(--rose) 0%, var(--turquoise) 50%, var(--lavande) 100%); padding: 100px 0; text-align: center; position: relative; overflow: hidden;">
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.15) 0%, transparent 50%), radial-gradient(circle at 70% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);"></div>
+        <div class="container" style="position: relative; z-index: 1;">
+            <h2 style="font-size: clamp(2.2rem, 5vw, 3.5rem); color: white; margin-bottom: 25px; font-weight: 700;">
+                Prêts à Rejoindre l'Aventure ? 🚀
+            </h2>
+            <p style="font-size: 1.3rem; color: rgba(255,255,255,0.95); margin-bottom: 45px; max-width: 650px; margin-left: auto; margin-right: auto; line-height: 1.7;">
+                Places limitées pour garantir un accompagnement personnalisé et bienveillant à chaque enfant
+            </p>
+            <a href="reservation-atelier.html" style="display: inline-block; background: white; color: var(--rose); padding: 20px 50px; border-radius: 35px; text-decoration: none; font-weight: 700; font-size: 1.2rem; box-shadow: 0 15px 50px rgba(0,0,0,0.25); transition: all 0.3s; border: 3px solid white;">
+                📝 Réserver Maintenant
+            </a>
+        </div>
+    </section>
+
+    <footer style="background: #2D3436; color: white; padding: 60px 0 20px;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px;">
+                <div>
+                    <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 15px; color: white;">Éveil & Vous</h3>
+                    <p style="color: rgba(255,255,255,0.7); line-height: 1.6;">Éveil en famille au milieu de la nature</p>
+                </div>
+                <div>
+                    <h3 style="font-family: var(--font-heading); font-size: 1.2rem; margin-bottom: 15px; color: white;">Pages</h3>
+                    <p><a href="about.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">À Propos</a></p>
+                    <p><a href="activites.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">Activités</a></p>
+                    <p><a href="ateliers.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">Ateliers</a></p>
+                    <p><a href="reservation.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">Réserver</a></p>
+                    <p><a href="contact.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">Contact</a></p>
+                </div>
+                <div>
+                    <h3 style="font-family: var(--font-heading); font-size: 1.2rem; margin-bottom: 15px; color: white;">Contact</h3>
+                    <p style="color: rgba(255,255,255,0.7); line-height: 1.6;">Limoux, Aude (11)<br>contact@eveil-vous.fr</p>
+                </div>
+                <div>
+                    <h3 style="font-family: var(--font-heading); font-size: 1.2rem; margin-bottom: 15px; color: white;">Suivez-nous</h3>
+                    <div style="display: flex; gap: 15px;">
+                        <a href="#" style="color: rgba(255,255,255,0.7); font-size: 1.3rem;"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" style="color: rgba(255,255,255,0.7); font-size: 1.3rem;"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; text-align: center;">
+                <p style="color: rgba(255,255,255,0.5);">&copy; 2025 Éveil & Vous - Tous droits réservés</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Slider functionality
+        const sliders = {
+            mercredi: {
+                currentSlide: 0,
+                slider: null,
+                dots: null
+            },
+            samedi: {
+                currentSlide: 0,
+                slider: null,
+                dots: null
+            }
+        };
+
+        // Initialize sliders
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mercredi slider
+            const mercrediSliders = document.querySelectorAll('.themes-slider');
+            sliders.mercredi.slider = mercrediSliders[0];
+            sliders.mercredi.dots = document.querySelectorAll('.slider-dots')[0].querySelectorAll('.dot');
+            
+            // Samedi slider
+            sliders.samedi.slider = document.querySelector('.samedi-slider');
+            sliders.samedi.dots = document.querySelector('.samedi-dots').querySelectorAll('.dot');
+        });
+
+        function moveSlider(type, direction) {
+            const totalSlides = 5;
+            sliders[type].currentSlide += direction;
+            
+            // Loop around
+            if (sliders[type].currentSlide < 0) {
+                sliders[type].currentSlide = totalSlides - 1;
+            } else if (sliders[type].currentSlide >= totalSlides) {
+                sliders[type].currentSlide = 0;
+            }
+            
+            updateSlider(type);
+        }
+
+        function goToSlide(type, index) {
+            sliders[type].currentSlide = index;
+            updateSlider(type);
+        }
+
+        function updateSlider(type) {
+            const offset = -sliders[type].currentSlide * 100;
+            sliders[type].slider.style.transform = `translateX(${offset}%)`;
+            
+            // Update dots
+            sliders[type].dots.forEach((dot, index) => {
+                if (index === sliders[type].currentSlide) {
+                    dot.classList.add('active');
+                    dot.style.background = type === 'mercredi' ? 'var(--corail)' : 'var(--turquoise)';
+                } else {
+                    dot.classList.remove('active');
+                    dot.style.background = '#ddd';
+                }
+            });
+        }
+
+        // Auto-slide every 5 seconds
+        setInterval(() => {
+            moveSlider('mercredi', 1);
+            moveSlider('samedi', 1);
+        }, 5000);
+
+        // Add hover effects to buttons
+        document.addEventListener('DOMContentLoaded', function() {
+            const buttons = document.querySelectorAll('.slider-prev, .slider-next');
+            buttons.forEach(btn => {
+                btn.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-50%) scale(1.1)';
+                    this.style.boxShadow = '0 8px 30px rgba(0,0,0,0.25)';
+                });
+                btn.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(-50%) scale(1)';
+                    this.style.boxShadow = '0 5px 20px rgba(0,0,0,0.15)';
+                });
+            });
+        });
+    </script>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

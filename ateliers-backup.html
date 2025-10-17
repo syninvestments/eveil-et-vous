@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ateliers d'éveil hebdomadaires pour enfants et familles - Mercredis et Samedis à Limoux">
+    <title>Ateliers Hebdomadaires | Éveil & Vous</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.cdnfonts.com/css/myriad-pro" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    
+    <style>
+        :root {
+            --rose: #F4A6B8;
+            --turquoise: #9DD9CE;
+            --peche: #FFD699;
+            --lavande: #C5A8E0;
+            --corail: #FFBB99;
+            --vert: #B8E6B8;
+            --bleu: #A8D5E8;
+        }
+        
+        body {
+            font-family: 'Myriad Pro', sans-serif;
+        }
+        
+        .floating-bubble {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: float 8s ease-in-out infinite;
+            pointer-events: none;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) translateX(0px); }
+            33% { transform: translateY(-20px) translateX(15px); }
+            66% { transform: translateY(10px) translateX(-15px); }
+        }
+        
+        .gradient-card {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .gradient-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 70px rgba(0,0,0,0.12);
+        }
+        
+        .gradient-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, var(--rose), var(--turquoise), var(--peche), var(--lavande));
+        }
+        
+        .theme-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+        
+        .theme-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+        
+        .theme-card.creative { border-color: var(--corail); }
+        .theme-card.sensory { border-color: var(--turquoise); }
+        .theme-card.yoga { border-color: var(--lavande); }
+        .theme-card.emotion { border-color: var(--rose); }
+        .theme-card.nature { border-color: var(--vert); }
+        
+        .icon-badge {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        
+        .workshop-banner {
+            background: linear-gradient(135deg, rgba(244, 166, 184, 0.15), rgba(157, 217, 206, 0.15));
+            border-radius: 30px;
+            padding: 50px;
+            margin-bottom: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header style="background: white; box-shadow: 0 2px 20px rgba(0,0,0,0.08); padding: 20px 0; position: sticky; top: 0; z-index: 1000;">
+        <div class="container">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <a href="index.html" style="text-decoration: none;">
+                    <img src="images/logo.png" alt="Éveil & Vous" style="height: 50px; width: auto;">
+                </a>
+                
+                <nav style="display: flex; gap: 35px; align-items: center;">
+                    <a href="about.html" style="color: #2D3436; text-decoration: none; font-weight: 500; transition: color 0.3s;">À Propos</a>
+                    <a href="activites.html" style="color: #2D3436; text-decoration: none; font-weight: 500; transition: color 0.3s;">Activités</a>
+                    <a href="ateliers.html" style="color: var(--rose); text-decoration: none; font-weight: 600; border-bottom: 2px solid var(--rose);">Ateliers</a>
+                    <a href="contact.html" style="color: #2D3436; text-decoration: none; font-weight: 500; transition: color 0.3s;">Contact</a>
+                    <a href="reservation.html" style="background: linear-gradient(135deg, var(--rose), var(--turquoise)); color: white; padding: 12px 28px; border-radius: 25px; text-decoration: none; font-weight: 600; box-shadow: 0 5px 20px rgba(244, 166, 184, 0.3);">Réserver un séjour</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section style="background: linear-gradient(135deg, #FFF4E6 0%, #F0FFFE 50%, #F5F0FF 100%); padding: 100px 0; text-align: center; position: relative; overflow: hidden;">
+        <!-- Bulles décoratives -->
+        <div class="floating-bubble" style="width: 300px; height: 300px; background: radial-gradient(circle, rgba(244, 166, 184, 0.4), transparent); top: 50px; right: 10%; animation-delay: 0s;"></div>
+        <div class="floating-bubble" style="width: 200px; height: 200px; background: radial-gradient(circle, rgba(157, 217, 206, 0.4), transparent); bottom: 80px; left: 5%; animation-delay: 2s;"></div>
+        <div class="floating-bubble" style="width: 250px; height: 250px; background: radial-gradient(circle, rgba(197, 168, 224, 0.4), transparent); top: 30%; left: 15%; animation-delay: 4s;"></div>
+        
+        <div class="container" style="position: relative; z-index: 1;">
+            <div style="display: inline-block; background: white; padding: 10px 25px; border-radius: 50px; margin-bottom: 25px; box-shadow: 0 8px 25px rgba(0,0,0,0.1);">
+                <span style="background: linear-gradient(90deg, var(--rose), var(--turquoise), var(--peche)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700; font-size: 1rem;">✨ ATELIERS HEBDOMADAIRES</span>
+            </div>
+            <h1 style="font-family: 'Myriad Pro', sans-serif; font-size: clamp(2.5rem, 6vw, 4.5rem); margin-bottom: 30px; color: #1A1A2E; font-weight: 700; line-height: 1.2;">
+                Éveillez Vos Enfants<br>
+                <span style="background: linear-gradient(90deg, var(--rose), var(--turquoise)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Chaque Semaine</span>
+            </h1>
+            <p style="font-size: 1.35rem; line-height: 1.8; color: #555; max-width: 800px; margin: 0 auto 40px;">
+                Des ateliers créatifs et sensoriels pour les enfants seuls le mercredi,<br>
+                et des moments privilégiés en duo parent-enfant le samedi
+            </p>
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                <a href="#mercredis" style="background: linear-gradient(135deg, var(--corail), var(--peche)); color: white; padding: 18px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; font-size: 1.1rem; box-shadow: 0 10px 30px rgba(255, 187, 153, 0.4); transition: transform 0.3s;">
+                    📅 Ateliers du Mercredi
+                </a>
+                <a href="#samedis" style="background: linear-gradient(135deg, var(--turquoise), var(--bleu)); color: white; padding: 18px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; font-size: 1.1rem; box-shadow: 0 10px 30px rgba(157, 217, 206, 0.4); transition: transform 0.3s;">
+                    👨‍👩‍👧 Ateliers du Samedi
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ATELIERS DU MERCREDI -->
+    <section id="mercredis" style="padding: 100px 0; background: white;">
+        <div class="container">
+            <div class="workshop-banner" style="background: linear-gradient(135deg, rgba(255, 187, 153, 0.12), rgba(255, 214, 153, 0.12));">
+                <div style="text-align: center; margin-bottom: 40px;">
+                    <div class="icon-badge" style="background: linear-gradient(135deg, var(--corail), var(--peche)); margin: 0 auto;">🎨</div>
+                    <h2 style="font-size: clamp(2.2rem, 4vw, 3.5rem); margin-bottom: 15px; color: #1A1A2E; font-weight: 700;">Ateliers du Mercredi</h2>
+                    <p style="font-size: 1.2rem; color: #555; max-width: 600px; margin: 0 auto;">
+                        Enfants de 4 à 12 ans | Exploration en autonomie
+                    </p>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; margin-bottom: 40px;">
+                    <div style="background: white; padding: 25px; border-radius: 20px; text-align: center; box-shadow: 0 8px 25px rgba(0,0,0,0.06);">
+                        <div style="font-size: 2.5rem; margin-bottom: 10px;">⏰</div>
+                        <h4 style="font-size: 1.1rem; margin-bottom: 8px; color: #1A1A2E;">Horaires</h4>
+                        <p style="color: #666; font-size: 0.95rem;">10h-11h30<br>ou 14h30-16h</p>
+                    </div>
+                    <div style="background: white; padding: 25px; border-radius: 20px; text-align: center; box-shadow: 0 8px 25px rgba(0,0,0,0.06);">
+                        <div style="font-size: 2.5rem; margin-bottom: 10px;">⏱️</div>
+                        <h4 style="font-size: 1.1rem; margin-bottom: 8px; color: #1A1A2E;">Durée</h4>
+                        <p style="color: #666; font-size: 0.95rem;">1h30<br>par séance</p>
+                    </div>
+                    <div style="background: white; padding: 25px; border-radius: 20px; text-align: center; box-shadow: 0 8px 25px rgba(0,0,0,0.06);">
+                        <div style="font-size: 2.5rem; margin-bottom: 10px;">🎫</div>
+                        <h4 style="font-size: 1.1rem; margin-bottom: 8px; color: #1A1A2E;">Formule</h4>
+                        <p style="color: #666; font-size: 0.95rem;">Cycle de 6 séances<br>(ou à l'unité)</p>
+                    </div>
+                </div>
+                
+                <div style="text-align: center;">
+                    <a href="reservation-atelier.html" style="display: inline-block; background: linear-gradient(135deg, var(--corail), var(--peche)); color: white; padding: 18px 45px; border-radius: 30px; text-decoration: none; font-weight: 600; font-size: 1.15rem; box-shadow: 0 10px 30px rgba(255, 187, 153, 0.4); transition: transform 0.3s;">
+                        📝 Réserver un atelier du Mercredi
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Thématiques Mercredi -->
+            <h3 style="text-align: center; font-size: 2.2rem; margin-bottom: 50px; color: #1A1A2E;">
+                5 Thématiques d'Éveil 🌈
+            </h3>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                <div class="theme-card creative">
+                    <div class="icon-badge" style="background: linear-gradient(135deg, var(--corail), #FF9A76);">🎨</div>
+                    <h4 style="font-size: 1.5rem; margin-bottom: 15px; color: #1A1A2E;">Éveil Créatif</h4>
+                    <p style="color: #666; line-height: 1.7;">Arts plastiques, musique, expression artistique pour libérer la créativité et l'imagination de votre enfant.</p>
+                </div>
+                
+                <div class="theme-card sensory">
+                    <div class="icon-badge" style="background: linear-gradient(135deg, var(--turquoise), #7ECFC0);">👃</div>
+                    <h4 style="font-size: 1.5rem; margin-bottom: 15px; color: #1A1A2E;">Éveil Sensoriel</h4>
+                    <p style="color: #666; line-height: 1.7;">Découverte des 5 sens à travers des expériences tactiles, olfactives, gustatives, visuelles et auditives.</p>
+                </div>
+                
+                <div class="theme-card yoga">
+                    <div class="icon-badge" style="background: linear-gradient(135deg, var(--lavande), #B593D6);">🧘</div>
+                    <h4 style="font-size: 1.5rem; margin-bottom: 15px; color: #1A1A2E;">Yoga & Relaxation</h4>
+                    <p style="color: #666; line-height: 1.7;">Postures ludiques, exercices de respiration et techniques de retour au calme adaptées aux enfants.</p>
+                </div>
+                
+                <div class="theme-card emotion">
+                    <div class="icon-badge" style="background: linear-gradient(135deg, var(--rose), #EA8FA3);">❤️</div>
+                    <h4 style="font-size: 1.5rem; margin-bottom: 15px; color: #1A1A2E;">Gestion des Émotions</h4>
+                    <p style="color: #666; line-height: 1.7;">Identifier, nommer et accueillir ses émotions grâce à des outils concrets et ludiques.</p>
+                </div>
+                
+                <div class="theme-card nature">
+                    <div class="icon-badge" style="background: linear-gradient(135deg, var(--vert), #9FD99F);">🌳</div>
+                    <h4 style="font-size: 1.5rem; margin-bottom: 15px; color: #1A1A2E;">Activités Nature</h4>
+                    <p style="color: #666; line-height: 1.7;">Jardinage, land art, exploration extérieure pour se reconnecter à la nature et à ses bienfaits.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+                            <strong style="display: block; margin-bottom: 5px; color: var(--text-color); font-size: 1.1rem;">Éveil sensoriel</strong>
+                            <span style="color: #666; font-size: 0.95rem;">Découverte des 5 sens, expériences tactiles</span>
+                        </li>
+                        <li style="padding: 18px 0; padding-left: 50px; position: relative; border-bottom: 1px solid rgba(0,0,0,0.05);">
+                            <div style="position: absolute; left: 0; top: 18px; background: var(--accent-color); width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.3rem;">🧘</div>
+                            <strong style="display: block; margin-bottom: 5px; color: var(--text-color); font-size: 1.1rem;">Yoga & relaxation</strong>
+                            <span style="color: #666; font-size: 0.95rem;">Postures ludiques, respiration, retour au calme</span>
+                        </li>
+                        <li style="padding: 18px 0; padding-left: 50px; position: relative; border-bottom: 1px solid rgba(0,0,0,0.05);">
+                            <div style="position: absolute; left: 0; top: 18px; background: var(--purple); width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.3rem;">❤️</div>
+                            <strong style="display: block; margin-bottom: 5px; color: var(--text-color); font-size: 1.1rem;">Gestion des émotions</strong>
+                            <span style="color: #666; font-size: 0.95rem;">Identifier, nommer et accueillir ses émotions</span>
+                        </li>
+                        <li style="padding: 18px 0; padding-left: 50px; position: relative;">
+                            <div style="position: absolute; left: 0; top: 18px; background: var(--orange); width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.3rem;">🌳</div>
+                            <strong style="display: block; margin-bottom: 5px; color: var(--text-color); font-size: 1.1rem;">Activités nature</strong>
+                            <span style="color: #666; font-size: 0.95rem;">Jardinage, land art, exploration extérieure</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Ateliers du Samedi -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
+                <div style="background: linear-gradient(135deg, rgba(181, 232, 224, 0.08), rgba(213, 181, 232, 0.08)); padding: 45px; border-radius: 30px; border: 2px solid rgba(181, 232, 224, 0.2); order: 1;">
+                    <h4 style="font-family: var(--font-heading); font-size: 1.6rem; margin-bottom: 30px; color: var(--text-color);">
+                        Au programme 🎯
+                    </h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 18px 0; padding-left: 50px; position: relative; border-bottom: 1px solid rgba(0,0,0,0.05);">
+                            <div style="position: absolute; left: 0; top: 18px; background: var(--primary-color); width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.3rem;">🎨</div>
+                            <strong style="display: block; margin-bottom: 5px; color: var(--text-color); font-size: 1.1rem;">Éveil créatif</strong>
+                            <span style="color: #666; font-size: 0.95rem;">Activités artistiques partagées parent-enfant</span>
+                        </li>
+                        <li style="padding: 18px 0; padding-left: 50px; position: relative; border-bottom: 1px solid rgba(0,0,0,0.05);">
+                            <div style="position: absolute; left: 0; top: 18px; background: var(--secondary-color); width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.3rem;">👃</div>
+                            <strong style="display: block; margin-bottom: 5px; color: var(--text-color); font-size: 1.1rem;">Éveil sensoriel</strong>
+                            <span style="color: #666; font-size: 0.95rem;">Exploration des 5 sens ensemble</span>
+                        </li>
+                        <li style="padding: 18px 0; padding-left: 50px; position: relative; border-bottom: 1px solid rgba(0,0,0,0.05);">
+                            <div style="position: absolute; left: 0; top: 18px; background: var(--accent-color); width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.3rem;">🧘</div>
+                            <strong style="display: block; margin-bottom: 5px; color: var(--text-color); font-size: 1.1rem;">Yoga & relaxation</strong>
+                            <span style="color: #666; font-size: 0.95rem;">Postures en duo, rituels de détente</span>
+                        </li>
+                        <li style="padding: 18px 0; padding-left: 50px; position: relative; border-bottom: 1px solid rgba(0,0,0,0.05);">
+                            <div style="position: absolute; left: 0; top: 18px; background: var(--purple); width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.3rem;">❤️</div>
+                            <strong style="display: block; margin-bottom: 5px; color: var(--text-color); font-size: 1.1rem;">Gestion des émotions</strong>
+                            <span style="color: #666; font-size: 0.95rem;">Communication bienveillante, vocabulaire émotionnel</span>
+                        </li>
+                        <li style="padding: 18px 0; padding-left: 50px; position: relative;">
+                            <div style="position: absolute; left: 0; top: 18px; background: var(--orange); width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.3rem;">�</div>
+                            <strong style="display: block; margin-bottom: 5px; color: var(--text-color); font-size: 1.1rem;">Activités nature</strong>
+                            <span style="color: #666; font-size: 0.95rem;">Connexion à la nature en duo</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div style="order: 2;">
+                    <div style="display: inline-block; background: rgba(181, 232, 224, 0.15); padding: 8px 20px; border-radius: 50px; margin-bottom: 20px;">
+                        <span style="color: var(--secondary-color); font-weight: 600; font-size: 0.9rem;">👨‍👩‍👧 SAMEDIS MATIN</span>
+                    </div>
+                    <h2 style="font-family: var(--font-heading); font-size: 2.8rem; margin-bottom: 20px; color: var(--text-color);">
+                        Ateliers du Samedi
+                    </h2>
+                    <p style="font-size: 1.15rem; line-height: 1.8; color: #666; margin-bottom: 30px;">
+                        Les mêmes thématiques explorées en duo parent-enfant pour créer du lien, partager des rituels et repartir avec des outils concrets à utiliser au quotidien.
+                    </p>
+                    
+                    <div style="background: white; padding: 35px; border-radius: 25px; box-shadow: 0 15px 40px rgba(0,0,0,0.08); margin-bottom: 30px;">
+                        <h4 style="font-family: var(--font-heading); font-size: 1.4rem; margin-bottom: 20px; color: var(--text-color);">
+                            📋 Informations pratiques
+                        </h4>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="padding: 12px 0; border-bottom: 1px solid #eee;">
+                                <strong style="color: var(--secondary-color);">Pour qui :</strong> Duo parent-enfant (4-12 ans)
+                            </li>
+                            <li style="padding: 12px 0; border-bottom: 1px solid #eee;">
+                                <strong style="color: var(--secondary-color);">Quand :</strong> Samedis 10h-11h30 ou 14h30-16h
+                            </li>
+                            <li style="padding: 12px 0; border-bottom: 1px solid #eee;">
+                                <strong style="color: var(--secondary-color);">Durée :</strong> 1h30 par séance
+                            </li>
+                            <li style="padding: 12px 0;">
+                                <strong style="color: var(--secondary-color);">Formule :</strong> À l'unité ou cycle de 4 séances
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <a href="reservation-atelier.html" style="display: inline-block; background: linear-gradient(135deg, var(--secondary-color), var(--purple)); color: white; padding: 16px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; font-size: 1.1rem; box-shadow: 0 10px 30px rgba(181, 232, 224, 0.3); transition: all 0.3s;">
+                        Réserver un atelier
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="background: var(--bg-light); padding: 80px 0;">
+        <div class="container">
+            <h2 style="font-family: var(--font-heading); font-size: 2.5rem; text-align: center; margin-bottom: 50px; color: var(--text-color);">
+                Ils ont testé nos ateliers
+            </h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                <div style="background: white; padding: 35px; border-radius: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
+                    <div style="color: var(--accent-color); font-size: 1.5rem; margin-bottom: 15px;">★★★★★</div>
+                    <p style="font-size: 1.05rem; line-height: 1.7; color: #666; margin-bottom: 20px; font-style: italic;">
+                        "Les ateliers du mercredi sont un vrai moment de bonheur pour mon fils. Il revient toujours avec des idées et de la fierté !"
+                    </p>
+                    <div style="font-weight: 600; color: var(--text-color);">— Julie, maman d'Antoine (6 ans)</div>
+                </div>
+                
+                <div style="background: white; padding: 35px; border-radius: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
+                    <div style="color: var(--accent-color); font-size: 1.5rem; margin-bottom: 15px;">★★★★★</div>
+                    <p style="font-size: 1.05rem; line-height: 1.7; color: #666; margin-bottom: 20px; font-style: italic;">
+                        "Le samedi matin est devenu notre rituel père-fille. On apprend ensemble et on crée des souvenirs précieux."
+                    </p>
+                    <div style="font-weight: 600; color: var(--text-color);">— David, papa de Chloé (8 ans)</div>
+                </div>
+                
+                <div style="background: white; padding: 35px; border-radius: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
+                    <div style="color: var(--accent-color); font-size: 1.5rem; margin-bottom: 15px;">★★★★★</div>
+                    <p style="font-size: 1.05rem; line-height: 1.7; color: #666; margin-bottom: 20px; font-style: italic;">
+                        "Les outils appris pendant les ateliers nous aident vraiment au quotidien. Merci pour cette belle découverte !"
+                    </p>
+                    <div style="font-weight: 600; color: var(--text-color);">— Marine & Julien</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); padding: 80px 0; text-align: center; position: relative; overflow: hidden;">
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 30% 50%, rgba(255, 229, 181, 0.2) 0%, transparent 50%), radial-gradient(circle at 70% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);"></div>
+        <div class="container" style="position: relative; z-index: 1;">
+            <h2 style="font-family: var(--font-heading); font-size: clamp(2rem, 5vw, 3rem); color: white; margin-bottom: 20px;">
+                Prêts à rejoindre nos ateliers ?
+            </h2>
+            <p style="font-size: 1.2rem; color: rgba(255,255,255,0.95); margin-bottom: 35px; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Places limitées pour garantir un accompagnement personnalisé
+            </p>
+            <a href="reservation-atelier.html" style="display: inline-block; background: white; color: var(--primary-color); padding: 18px 45px; border-radius: 30px; text-decoration: none; font-weight: 700; font-size: 1.1rem; box-shadow: 0 15px 40px rgba(0,0,0,0.2); transition: all 0.3s;">
+                Réserver maintenant
+            </a>
+        </div>
+    </section>
+
+    <footer style="background: var(--footer-bg); color: var(--footer-text); padding: 60px 0 20px;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px;">
+                <div>
+                    <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 15px;">Éveil & Vous</h3>
+                    <p style="color: rgba(255,255,255,0.7); line-height: 1.6;">Éveil en famille au milieu de la nature</p>
+                </div>
+                <div>
+                    <h3 style="font-family: var(--font-heading); font-size: 1.2rem; margin-bottom: 15px;">Pages</h3>
+                    <p><a href="about.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">À Propos</a></p>
+                    <p><a href="activites.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">Activités</a></p>
+                    <p><a href="ateliers.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">Ateliers</a></p>
+                    <p><a href="reservation.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">Réserver</a></p>
+                    <p><a href="contact.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">Contact</a></p>
+                </div>
+                <div>
+                    <h3 style="font-family: var(--font-heading); font-size: 1.2rem; margin-bottom: 15px;">Contact</h3>
+                    <p style="color: rgba(255,255,255,0.7); line-height: 1.6;">Limoux, Aude (11)<br>contact@eveil-vous.fr</p>
+                </div>
+                <div>
+                    <h3 style="font-family: var(--font-heading); font-size: 1.2rem; margin-bottom: 15px;">Suivez-nous</h3>
+                    <div style="display: flex; gap: 15px;">
+                        <a href="#" style="color: rgba(255,255,255,0.7); font-size: 1.3rem;"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" style="color: rgba(255,255,255,0.7); font-size: 1.3rem;"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; text-align: center;">
+                <p style="color: rgba(255,255,255,0.5);">&copy; 2025 Éveil & Vous - Tous droits réservés</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
