@@ -39,162 +39,278 @@
         </div>
     </section>
 
-    <section class="section">
-        <div class="container">
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1400px; margin: 0 auto;">
+    <section class="section" style="background: linear-gradient(180deg, #ffffff 0%, #f8f9ff 100%); position: relative; overflow: hidden;">
+        <!-- Decorative Background Elements -->
+        <div style="position: absolute; top: -100px; left: -100px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(255, 107, 157, 0.1) 0%, transparent 70%); border-radius: 50%; filter: blur(60px);"></div>
+        <div style="position: absolute; bottom: -100px; right: -100px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(78, 205, 196, 0.1) 0%, transparent 70%); border-radius: 50%; filter: blur(60px);"></div>
+        
+        <div class="container" style="position: relative;">
+            <!-- Slider Header -->
+            <div style="text-align: center; margin-bottom: 60px;">
+                <div style="display: inline-block; background: linear-gradient(135deg, rgba(255, 107, 157, 0.1), rgba(78, 205, 196, 0.1)); padding: 12px 30px; border-radius: 50px; margin-bottom: 20px; backdrop-filter: blur(10px); border: 2px solid rgba(255, 107, 157, 0.2);">
+                    <span style="background: linear-gradient(135deg, #FF6B9D, #4ECDC4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700; font-size: 1rem; letter-spacing: 2px;">NOS 5 DIMENSIONS</span>
+                </div>
+                <h2 style="font-family: var(--font-heading); font-size: clamp(2.5rem, 5vw, 3.5rem); margin-bottom: 15px; background: linear-gradient(135deg, #1A1A2E, #4A4A6A); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                    Découvrez nos Activités d'Éveil
+                </h2>
+                <p style="font-size: 1.2rem; color: #666; max-width: 600px; margin: 0 auto;">
+                    Explorez chaque dimension pour une expérience complète et enrichissante
+                </p>
+            </div>
+            
+            <!-- Slider Container -->
+            <div style="position: relative; max-width: 1100px; margin: 0 auto; padding: 0 80px; overflow: hidden;">
+                
+                <!-- Slider Wrapper -->
+                <div id="activitiesSlider" style="display: flex; transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);">
                 
                 <!-- Éveil Corporel -->
-                <div style="background: linear-gradient(135deg, #FF6B9D 0%, #FF8FA3 100%); padding: 0; border-radius: 25px; box-shadow: 0 20px 50px rgba(255, 107, 157, 0.3); overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 25px 60px rgba(255, 107, 157, 0.4)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 20px 50px rgba(255, 107, 157, 0.3)';">
-                    <div style="padding: 40px; background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.9) 100%);">
-                        <div style="width: 70px; height: 70px; background: linear-gradient(135deg, #FF6B9D, #FF8FA3); border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; margin-bottom: 20px; box-shadow: 0 10px 25px rgba(255, 107, 157, 0.3);">🤸</div>
-                        <h3 style="font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 15px; color: #FF6B9D;">Éveil Corporel</h3>
-                        <p style="font-size: 1rem; line-height: 1.7; color: #555; margin-bottom: 20px;">
-                            Des ateliers pour accompagner vos enfants dans leur développement physique et moteur grâce à des activités ludiques. Ils gagneront ainsi en confiance et en équilibre.
+                <div style="min-width: 100%; padding: 50px; background: white; border-radius: 35px; box-shadow: 0 30px 80px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(255, 107, 157, 0.1); position: relative; overflow: hidden;">
+                    <!-- Gradient Accent Bar -->
+                    <div style="position: absolute; top: 0; left: 0; right: 0; height: 6px; background: linear-gradient(90deg, #FF6B9D, #FF8FA3, #FFB3C6);"></div>
+                    
+                    <!-- Content -->
+                    <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 30px;">
+                        <div style="width: 90px; height: 90px; background: linear-gradient(135deg, #FF6B9D, #FF8FA3); border-radius: 25px; display: flex; align-items: center; justify-content: center; font-size: 3rem; box-shadow: 0 15px 35px rgba(255, 107, 157, 0.4); flex-shrink: 0;">🤸</div>
+                        <div>
+                            <h3 style="font-family: var(--font-heading); font-size: 2.2rem; margin-bottom: 8px; color: #1A1A2E;">Éveil Corporel</h3>
+                            <div style="display: inline-block; background: linear-gradient(135deg, rgba(255, 107, 157, 0.15), rgba(255, 143, 163, 0.15)); padding: 6px 18px; border-radius: 20px;">
+                                <span style="color: #FF6B9D; font-weight: 600; font-size: 0.9rem;">Mouvement & Bien-être</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p style="font-size: 1.15rem; line-height: 1.8; color: #555; margin-bottom: 35px;">
+                        Des ateliers pour accompagner vos enfants dans leur développement physique et moteur grâce à des activités ludiques. Ils gagneront ainsi en confiance et en équilibre.
+                    </p>
+                    
+                    <div style="background: linear-gradient(135deg, rgba(255, 107, 157, 0.08), rgba(255, 143, 163, 0.05)); padding: 30px; border-radius: 20px; border-left: 5px solid #FF6B9D;">
+                        <p style="font-size: 1.05rem; line-height: 1.6; color: #666; margin-bottom: 20px; font-weight: 600; display: flex; align-items: center; gap: 10px;">
+                            <span style="font-size: 1.3rem;">✨</span>
+                            Des activités pour se défouler dans la bonne humeur :
                         </p>
-                        <div style="background: rgba(255, 107, 157, 0.1); padding: 20px; border-radius: 15px; margin-bottom: 15px;">
-                            <p style="font-size: 1rem; line-height: 1.6; color: #666; margin-bottom: 12px; font-weight: 500;">
-                                Des activités pour se défouler dans la bonne humeur :
-                            </p>
-                            <ul style="list-style: none; color: #666; margin: 0; padding: 0;">
-                                <li style="padding: 6px 0; padding-left: 25px; position: relative; font-size: 1rem;">
-                                    <span style="position: absolute; left: 0; color: #FF6B9D; font-weight: bold;">✦</span>
-                                    Yoga
-                                </li>
-                                <li style="padding: 6px 0; padding-left: 25px; position: relative; font-size: 1rem;">
-                                    <span style="position: absolute; left: 0; color: #FF6B9D; font-weight: bold;">✦</span>
-                                    Danse
-                                </li>
-                                <li style="padding: 6px 0; padding-left: 25px; position: relative; font-size: 1rem;">
-                                    <span style="position: absolute; left: 0; color: #FF6B9D; font-weight: bold;">✦</span>
-                                    Baignade dans des sources naturelles
-                                </li>
-                                <li style="padding: 6px 0; padding-left: 25px; position: relative; font-size: 1rem;">
-                                    <span style="position: absolute; left: 0; color: #FF6B9D; font-weight: bold;">✦</span>
-                                    Se soigner naturellement
-                                </li>
-                            </ul>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                            <div style="display: flex; align-items: center; gap: 12px; background: white; padding: 15px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+                                <span style="color: #FF6B9D; font-size: 1.2rem; font-weight: bold;">✦</span>
+                                <span style="color: #1A1A2E; font-size: 1.05rem; font-weight: 500;">Yoga</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 12px; background: white; padding: 15px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+                                <span style="color: #FF6B9D; font-size: 1.2rem; font-weight: bold;">✦</span>
+                                <span style="color: #1A1A2E; font-size: 1.05rem; font-weight: 500;">Danse</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 12px; background: white; padding: 15px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+                                <span style="color: #FF6B9D; font-size: 1.2rem; font-weight: bold;">✦</span>
+                                <span style="color: #1A1A2E; font-size: 1.05rem; font-weight: 500;">Baignade</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 12px; background: white; padding: 15px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+                                <span style="color: #FF6B9D; font-size: 1.2rem; font-weight: bold;">✦</span>
+                                <span style="color: #1A1A2E; font-size: 1.05rem; font-weight: 500;">Soins naturels</span>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Éveil Spirituel -->
-                <div style="background: linear-gradient(135deg, #4ECDC4 0%, #5DD9D1 100%); padding: 0; border-radius: 25px; box-shadow: 0 20px 50px rgba(78, 205, 196, 0.3); overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 25px 60px rgba(78, 205, 196, 0.4)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 20px 50px rgba(78, 205, 196, 0.3)';">
-                    <div style="padding: 40px; background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.9) 100%);">
-                        <div style="width: 70px; height: 70px; background: linear-gradient(135deg, #4ECDC4, #5DD9D1); border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; margin-bottom: 20px; box-shadow: 0 10px 25px rgba(78, 205, 196, 0.3);">🧘</div>
-                        <h3 style="font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 15px; color: #4ECDC4;">Éveil Spirituel</h3>
-                        <p style="font-size: 1rem; line-height: 1.7; color: #555; margin-bottom: 20px;">
-                            Des ateliers pour prendre conscience de son corps, de sa respiration, canaliser son énergie, installer le calme.
+                <div style="min-width: 100%; padding: 50px; background: white; border-radius: 35px; box-shadow: 0 30px 80px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(78, 205, 196, 0.1); position: relative; overflow: hidden;">
+                    <!-- Gradient Accent Bar -->
+                    <div style="position: absolute; top: 0; left: 0; right: 0; height: 6px; background: linear-gradient(90deg, #4ECDC4, #5DD9D1, #77E8E1);"></div>
+                    
+                    <!-- Content -->
+                    <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 30px;">
+                        <div style="width: 90px; height: 90px; background: linear-gradient(135deg, #4ECDC4, #5DD9D1); border-radius: 25px; display: flex; align-items: center; justify-content: center; font-size: 3rem; box-shadow: 0 15px 35px rgba(78, 205, 196, 0.4); flex-shrink: 0;">🧘</div>
+                        <div>
+                            <h3 style="font-family: var(--font-heading); font-size: 2.2rem; margin-bottom: 8px; color: #1A1A2E;">Éveil Spirituel</h3>
+                            <div style="display: inline-block; background: linear-gradient(135deg, rgba(78, 205, 196, 0.15), rgba(93, 217, 209, 0.15)); padding: 6px 18px; border-radius: 20px;">
+                                <span style="color: #4ECDC4; font-weight: 600; font-size: 0.9rem;">Conscience & Sérénité</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p style="font-size: 1.15rem; line-height: 1.8; color: #555; margin-bottom: 35px;">
+                        Des ateliers pour prendre conscience de son corps, de sa respiration, canaliser son énergie, installer le calme.
+                    </p>
+                    
+                    <div style="background: linear-gradient(135deg, rgba(78, 205, 196, 0.08), rgba(93, 217, 209, 0.05)); padding: 30px; border-radius: 20px; border-left: 5px solid #4ECDC4;">
+                        <p style="font-size: 1.05rem; line-height: 1.6; color: #666; margin-bottom: 20px; font-weight: 600; display: flex; align-items: center; gap: 10px;">
+                            <span style="font-size: 1.3rem;">✨</span>
+                            Découvrez la paix intérieure :
                         </p>
-                        <div style="background: rgba(78, 205, 196, 0.1); padding: 20px; border-radius: 15px;">
-                            <ul style="list-style: none; color: #666; margin: 0; padding: 0;">
-                                <li style="padding: 6px 0; padding-left: 25px; position: relative; font-size: 1rem;">
-                                    <span style="position: absolute; left: 0; color: #4ECDC4; font-weight: bold;">✦</span>
-                                    Méditation
-                                </li>
-                                <li style="padding: 6px 0; padding-left: 25px; position: relative; font-size: 1rem;">
-                                    <span style="position: absolute; left: 0; color: #4ECDC4; font-weight: bold;">✦</span>
-                                    Les points d'énergie du corps : chakras
-                                </li>
-                                <li style="padding: 6px 0; padding-left: 25px; position: relative; font-size: 1rem;">
-                                    <span style="position: absolute; left: 0; color: #4ECDC4; font-weight: bold;">✦</span>
-                                    Balades en forêt
-                                </li>
-                            </ul>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                            <div style="display: flex; align-items: center; gap: 12px; background: white; padding: 15px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+                                <span style="color: #4ECDC4; font-size: 1.2rem; font-weight: bold;">✦</span>
+                                <span style="color: #1A1A2E; font-size: 1.05rem; font-weight: 500;">Méditation</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 12px; background: white; padding: 15px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+                                <span style="color: #4ECDC4; font-size: 1.2rem; font-weight: bold;">✦</span>
+                                <span style="color: #1A1A2E; font-size: 1.05rem; font-weight: 500;">Chakras</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 12px; background: white; padding: 15px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+                                <span style="color: #4ECDC4; font-size: 1.2rem; font-weight: bold;">✦</span>
+                                <span style="color: #1A1A2E; font-size: 1.05rem; font-weight: 500;">Balades en forêt</span>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Éveil Émotionnel -->
-                <div style="background: linear-gradient(135deg, #FFE66D 0%, #FFF099 100%); padding: 0; border-radius: 25px; box-shadow: 0 20px 50px rgba(255, 230, 109, 0.3); overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 25px 60px rgba(255, 230, 109, 0.4)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 20px 50px rgba(255, 230, 109, 0.3)';">
-                    <div style="padding: 40px; background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.9) 100%);">
-                        <div style="width: 70px; height: 70px; background: linear-gradient(135deg, #FFE66D, #FFF099); border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; margin-bottom: 20px; box-shadow: 0 10px 25px rgba(255, 230, 109, 0.3);">❤️</div>
-                        <h3 style="font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 15px; color: #E6B800;">Éveil Émotionnel</h3>
-                        <p style="font-size: 1rem; line-height: 1.7; color: #555; margin-bottom: 15px;">
-                            Des ateliers pour aider vos enfants à identifier leurs émotions et les aider à mieux les comprendre.
+                <div style="min-width: 100%; padding: 50px; background: white; border-radius: 35px; box-shadow: 0 30px 80px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(255, 230, 109, 0.1); position: relative; overflow: hidden;">
+                    <!-- Gradient Accent Bar -->
+                    <div style="position: absolute; top: 0; left: 0; right: 0; height: 6px; background: linear-gradient(90deg, #FFE66D, #FFF099, #FFFACD);"></div>
+                    
+                    <!-- Content -->
+                    <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 30px;">
+                        <div style="width: 90px; height: 90px; background: linear-gradient(135deg, #FFE66D, #FFF099); border-radius: 25px; display: flex; align-items: center; justify-content: center; font-size: 3rem; box-shadow: 0 15px 35px rgba(255, 230, 109, 0.4); flex-shrink: 0;">❤️</div>
+                        <div>
+                            <h3 style="font-family: var(--font-heading); font-size: 2.2rem; margin-bottom: 8px; color: #1A1A2E;">Éveil Émotionnel</h3>
+                            <div style="display: inline-block; background: linear-gradient(135deg, rgba(255, 230, 109, 0.15), rgba(255, 240, 153, 0.15)); padding: 6px 18px; border-radius: 20px;">
+                                <span style="color: #E6B800; font-weight: 600; font-size: 0.9rem;">Expression & Compréhension</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p style="font-size: 1.15rem; line-height: 1.8; color: #555; margin-bottom: 15px;">
+                        Des ateliers pour aider vos enfants à identifier leurs émotions et les aider à mieux les comprendre.
+                    </p>
+                    <p style="font-size: 1.05rem; line-height: 1.7; color: #666; margin-bottom: 35px; font-style: italic;">
+                        L'émotion étant avant tout physique, ils se laissent parfois envahir par le ressenti de ces émotions qu'ils ne comprennent pas.
+                    </p>
+                    
+                    <div style="background: linear-gradient(135deg, rgba(255, 230, 109, 0.08), rgba(255, 240, 153, 0.05)); padding: 30px; border-radius: 20px; border-left: 5px solid #FFE66D;">
+                        <p style="font-size: 1.05rem; line-height: 1.6; color: #666; margin-bottom: 20px; font-weight: 600; display: flex; align-items: center; gap: 10px;">
+                            <span style="font-size: 1.3rem;">✨</span>
+                            Apprenez à gérer vos émotions :
                         </p>
-                        <p style="font-size: 1rem; line-height: 1.6; color: #666; margin-bottom: 20px; font-style: italic;">
-                            L'émotion étant avant tout physique, ils se laissent parfois envahir par le ressenti de ces émotions qu'ils ne comprennent pas.
-                        </p>
-                        <div style="background: rgba(255, 230, 109, 0.15); padding: 20px; border-radius: 15px;">
-                            <ul style="list-style: none; color: #666; margin: 0; padding: 0;">
-                                <li style="padding: 6px 0; padding-left: 25px; position: relative; font-size: 1rem;">
-                                    <span style="position: absolute; left: 0; color: #E6B800; font-weight: bold;">✦</span>
-                                    Gestion de la colère
-                                </li>
-                                <li style="padding: 6px 0; padding-left: 25px; position: relative; font-size: 1rem;">
-                                    <span style="position: absolute; left: 0; color: #E6B800; font-weight: bold;">✦</span>
-                                    Le langage des émotions
-                                </li>
-                                <li style="padding: 6px 0; padding-left: 25px; position: relative; font-size: 1rem;">
-                                    <span style="position: absolute; left: 0; color: #E6B800; font-weight: bold;">✦</span>
-                                    Ateliers de parole
-                                </li>
-                            </ul>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                            <div style="display: flex; align-items: center; gap: 12px; background: white; padding: 15px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+                                <span style="color: #E6B800; font-size: 1.2rem; font-weight: bold;">✦</span>
+                                <span style="color: #1A1A2E; font-size: 1.05rem; font-weight: 500;">Gestion de la colère</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 12px; background: white; padding: 15px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+                                <span style="color: #E6B800; font-size: 1.2rem; font-weight: bold;">✦</span>
+                                <span style="color: #1A1A2E; font-size: 1.05rem; font-weight: 500;">Langage émotions</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 12px; background: white; padding: 15px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+                                <span style="color: #E6B800; font-size: 1.2rem; font-weight: bold;">✦</span>
+                                <span style="color: #1A1A2E; font-size: 1.05rem; font-weight: 500;">Ateliers de parole</span>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Éveil Sensoriel -->
-                <div style="background: linear-gradient(135deg, #FF6B9D 0%, #FF8FA3 100%); padding: 0; border-radius: 25px; box-shadow: 0 20px 50px rgba(255, 107, 157, 0.3); overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 25px 60px rgba(255, 107, 157, 0.4)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 20px 50px rgba(255, 107, 157, 0.3)';">
-                    <div style="padding: 40px; background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.9) 100%);">
-                        <div style="width: 70px; height: 70px; background: linear-gradient(135deg, #FF6B9D, #FF8FA3); border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; margin-bottom: 20px; box-shadow: 0 10px 25px rgba(255, 107, 157, 0.3);">👁️</div>
-                        <h3 style="font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 15px; color: #FF6B9D;">Éveil Sensoriel</h3>
-                        <p style="font-size: 1rem; line-height: 1.7; color: #555; margin-bottom: 20px;">
-                            Des ateliers pour que vos enfants se familiarisent davantage avec tous leurs sens et apprennent à mieux les exploiter dans leur quotidien :
+                <div style="min-width: 100%; padding: 50px; background: white; border-radius: 35px; box-shadow: 0 30px 80px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(255, 107, 157, 0.1); position: relative; overflow: hidden;">
+                    <!-- Gradient Accent Bar -->
+                    <div style="position: absolute; top: 0; left: 0; right: 0; height: 6px; background: linear-gradient(90deg, #A78BFA, #DDA0DD, #FFB6D9);"></div>
+                    
+                    <!-- Content -->
+                    <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 30px;">
+                        <div style="width: 90px; height: 90px; background: linear-gradient(135deg, #A78BFA, #DDA0DD); border-radius: 25px; display: flex; align-items: center; justify-content: center; font-size: 3rem; box-shadow: 0 15px 35px rgba(167, 139, 250, 0.4); flex-shrink: 0;">👁️</div>
+                        <div>
+                            <h3 style="font-family: var(--font-heading); font-size: 2.2rem; margin-bottom: 8px; color: #1A1A2E;">Éveil Sensoriel</h3>
+                            <div style="display: inline-block; background: linear-gradient(135deg, rgba(167, 139, 250, 0.15), rgba(221, 160, 221, 0.15)); padding: 6px 18px; border-radius: 20px;">
+                                <span style="color: #A78BFA; font-weight: 600; font-size: 0.9rem;">Découverte des 5 Sens</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p style="font-size: 1.15rem; line-height: 1.8; color: #555; margin-bottom: 35px;">
+                        Des ateliers pour que vos enfants se familiarisent davantage avec tous leurs sens et apprennent à mieux les exploiter dans leur quotidien.
+                    </p>
+                    
+                    <div style="background: linear-gradient(135deg, rgba(167, 139, 250, 0.08), rgba(221, 160, 221, 0.05)); padding: 30px; border-radius: 20px; border-left: 5px solid #A78BFA;">
+                        <p style="font-size: 1.05rem; line-height: 1.6; color: #666; margin-bottom: 20px; font-weight: 600; display: flex; align-items: center; gap: 10px;">
+                            <span style="font-size: 1.3rem;">✨</span>
+                            Éveillez vos sens :
                         </p>
-                        <div style="background: rgba(255, 107, 157, 0.1); padding: 20px; border-radius: 15px;">
-                            <ul style="list-style: none; color: #666; margin: 0; padding: 0;">
-                                <li style="padding: 6px 0; padding-left: 25px; position: relative; font-size: 1rem;">
-                                    <span style="position: absolute; left: 0; color: #FF6B9D; font-weight: bold;">✦</span>
-                                    Culture du potager
-                                </li>
-                                <li style="padding: 6px 0; padding-left: 25px; position: relative; font-size: 1rem;">
-                                    <span style="position: absolute; left: 0; color: #FF6B9D; font-weight: bold;">✦</span>
-                                    Réalisations de recettes
-                                </li>
-                                <li style="padding: 6px 0; padding-left: 25px; position: relative; font-size: 1rem;">
-                                    <span style="position: absolute; left: 0; color: #FF6B9D; font-weight: bold;">✦</span>
-                                    Une bonne alimentation
-                                </li>
-                                <li style="padding: 6px 0; padding-left: 25px; position: relative; font-size: 1rem;">
-                                    <span style="position: absolute; left: 0; color: #FF6B9D; font-weight: bold;">✦</span>
-                                    Visite de vignobles
-                                </li>
-                            </ul>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                            <div style="display: flex; align-items: center; gap: 12px; background: white; padding: 15px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+                                <span style="color: #A78BFA; font-size: 1.2rem; font-weight: bold;">✦</span>
+                                <span style="color: #1A1A2E; font-size: 1.05rem; font-weight: 500;">Culture du potager</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 12px; background: white; padding: 15px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+                                <span style="color: #A78BFA; font-size: 1.2rem; font-weight: bold;">✦</span>
+                                <span style="color: #1A1A2E; font-size: 1.05rem; font-weight: 500;">Recettes</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 12px; background: white; padding: 15px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+                                <span style="color: #A78BFA; font-size: 1.2rem; font-weight: bold;">✦</span>
+                                <span style="color: #1A1A2E; font-size: 1.05rem; font-weight: 500;">Alimentation</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 12px; background: white; padding: 15px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+                                <span style="color: #A78BFA; font-size: 1.2rem; font-weight: bold;">✦</span>
+                                <span style="color: #1A1A2E; font-size: 1.05rem; font-weight: 500;">Visite vignobles</span>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Éveil Intellectuel -->
-                <div style="background: linear-gradient(135deg, #4ECDC4 0%, #5DD9D1 100%); padding: 0; border-radius: 25px; box-shadow: 0 20px 50px rgba(78, 205, 196, 0.3); overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 25px 60px rgba(78, 205, 196, 0.4)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 20px 50px rgba(78, 205, 196, 0.3)';">
-                    <div style="padding: 40px; background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.9) 100%);">
-                        <div style="width: 70px; height: 70px; background: linear-gradient(135deg, #4ECDC4, #5DD9D1); border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; margin-bottom: 20px; box-shadow: 0 10px 25px rgba(78, 205, 196, 0.3);">🧠</div>
-                        <h3 style="font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 15px; color: #4ECDC4;">Éveil Intellectuel</h3>
-                        <p style="font-size: 1rem; line-height: 1.7; color: #555; margin-bottom: 15px;">
-                            Des ateliers pour aller à la découverte du potentiel de vos enfants à travers des exercices guidés mais aussi des activités libres.
+                <div style="min-width: 100%; padding: 50px; background: white; border-radius: 35px; box-shadow: 0 30px 80px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(78, 205, 196, 0.1); position: relative; overflow: hidden;">
+                    <!-- Gradient Accent Bar -->
+                    <div style="position: absolute; top: 0; left: 0; right: 0; height: 6px; background: linear-gradient(90deg, #4ECDC4, #5DD9D1, #77E8E1);"></div>
+                    
+                    <!-- Content -->
+                    <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 30px;">
+                        <div style="width: 90px; height: 90px; background: linear-gradient(135deg, #4ECDC4, #5DD9D1); border-radius: 25px; display: flex; align-items: center; justify-content: center; font-size: 3rem; box-shadow: 0 15px 35px rgba(78, 205, 196, 0.4); flex-shrink: 0;">🧠</div>
+                        <div>
+                            <h3 style="font-family: var(--font-heading); font-size: 2.2rem; margin-bottom: 8px; color: #1A1A2E;">Éveil Intellectuel</h3>
+                            <div style="display: inline-block; background: linear-gradient(135deg, rgba(78, 205, 196, 0.15), rgba(93, 217, 209, 0.15)); padding: 6px 18px; border-radius: 20px;">
+                                <span style="color: #4ECDC4; font-weight: 600; font-size: 0.9rem;">Créativité & Culture</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p style="font-size: 1.15rem; line-height: 1.8; color: #555; margin-bottom: 15px;">
+                        Des ateliers pour aller à la découverte du potentiel de vos enfants à travers des exercices guidés mais aussi des activités libres.
+                    </p>
+                    <p style="font-size: 1.05rem; line-height: 1.7; color: #666; margin-bottom: 35px; font-style: italic;">
+                        Une autre lecture est possible ✨
+                    </p>
+                    
+                    <div style="background: linear-gradient(135deg, rgba(78, 205, 196, 0.08), rgba(93, 217, 209, 0.05)); padding: 30px; border-radius: 20px; border-left: 5px solid #4ECDC4;">
+                        <p style="font-size: 1.05rem; line-height: 1.6; color: #666; margin-bottom: 20px; font-weight: 600; display: flex; align-items: center; gap: 10px;">
+                            <span style="font-size: 1.3rem;">✨</span>
+                            Explorez votre créativité :
                         </p>
-                        <p style="font-size: 1rem; line-height: 1.6; color: #666; margin-bottom: 20px; font-style: italic;">
-                            Une autre lecture est possible
-                        </p>
-                        <div style="background: rgba(78, 205, 196, 0.1); padding: 20px; border-radius: 15px;">
-                            <ul style="list-style: none; color: #666; margin: 0; padding: 0;">
-                                <li style="padding: 6px 0; padding-left: 25px; position: relative; font-size: 1rem;">
-                                    <span style="position: absolute; left: 0; color: #4ECDC4; font-weight: bold;">✦</span>
-                                    Peinture et dessins
-                                </li>
-                                <li style="padding: 6px 0; padding-left: 25px; position: relative; font-size: 1rem;">
-                                    <span style="position: absolute; left: 0; color: #4ECDC4; font-weight: bold;">✦</span>
-                                    Musique
-                                </li>
-                                <li style="padding: 6px 0; padding-left: 25px; position: relative; font-size: 1rem;">
-                                    <span style="position: absolute; left: 0; color: #4ECDC4; font-weight: bold;">✦</span>
-                                    Théâtre
-                                </li>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                            <div style="display: flex; align-items: center; gap: 12px; background: white; padding: 15px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+                                <span style="color: #4ECDC4; font-size: 1.2rem; font-weight: bold;">✦</span>
+                                <span style="color: #1A1A2E; font-size: 1.05rem; font-weight: 500;">Peinture & dessins</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 12px; background: white; padding: 15px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+                                <span style="color: #4ECDC4; font-size: 1.2rem; font-weight: bold;">✦</span>
+                                <span style="color: #1A1A2E; font-size: 1.05rem; font-weight: 500;">Musique</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 12px; background: white; padding: 15px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+                                <span style="color: #4ECDC4; font-size: 1.2rem; font-weight: bold;">✦</span>
+                                <span style="color: #1A1A2E; font-size: 1.05rem; font-weight: 500;">Théâtre</span>
+                            </div>
                             </ul>
                         </div>
                     </div>
                 </div>
 
+                </div>
+                
+                <!-- Navigation Buttons -->
+                <button id="prevBtn" style="position: absolute; left: 0; top: 50%; transform: translateY(-50%); background: linear-gradient(135deg, #FF6B9D, #4ECDC4); border: none; width: 60px; height: 60px; border-radius: 50%; box-shadow: 0 10px 30px rgba(255, 107, 157, 0.3); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; color: white; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); z-index: 10; backdrop-filter: blur(10px);" onmouseover="this.style.transform='translateY(-50%) scale(1.15) rotate(-5deg)'; this.style.boxShadow='0 15px 40px rgba(255, 107, 157, 0.5)';" onmouseout="this.style.transform='translateY(-50%) scale(1) rotate(0deg)'; this.style.boxShadow='0 10px 30px rgba(255, 107, 157, 0.3)';">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 18L9 12L15 6" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <button id="nextBtn" style="position: absolute; right: 0; top: 50%; transform: translateY(-50%); background: linear-gradient(135deg, #4ECDC4, #A78BFA); border: none; width: 60px; height: 60px; border-radius: 50%; box-shadow: 0 10px 30px rgba(78, 205, 196, 0.3); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; color: white; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); z-index: 10; backdrop-filter: blur(10px);" onmouseover="this.style.transform='translateY(-50%) scale(1.15) rotate(5deg)'; this.style.boxShadow='0 15px 40px rgba(78, 205, 196, 0.5)';" onmouseout="this.style.transform='translateY(-50%) scale(1) rotate(0deg)'; this.style.boxShadow='0 10px 30px rgba(78, 205, 196, 0.3)';">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 18L15 12L9 6" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                
+                <!-- Pagination Dots -->
+                <div id="pagination" style="display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 50px;">
+                    <span class="dot" data-slide="0" style="width: 40px; height: 8px; background: linear-gradient(135deg, #FF6B9D, #FF8FA3); border-radius: 10px; cursor: pointer; transition: all 0.4s ease; box-shadow: 0 4px 10px rgba(255, 107, 157, 0.3);"></span>
+                    <span class="dot" data-slide="1" style="width: 8px; height: 8px; background: #ddd; border-radius: 50%; cursor: pointer; transition: all 0.4s ease;"></span>
+                    <span class="dot" data-slide="2" style="width: 8px; height: 8px; background: #ddd; border-radius: 50%; cursor: pointer; transition: all 0.4s ease;"></span>
+                    <span class="dot" data-slide="3" style="width: 8px; height: 8px; background: #ddd; border-radius: 50%; cursor: pointer; transition: all 0.4s ease;"></span>
+                    <span class="dot" data-slide="4" style="width: 8px; height: 8px; background: #ddd; border-radius: 50%; cursor: pointer; transition: all 0.4s ease;"></span>
+                </div>
             </div>
         </div>
     </section>
@@ -426,7 +542,6 @@
 
     <!-- CTA Banner -->
     <section style="background: linear-gradient(135deg, #FF6B9D, #4ECDC4); padding: 100px 0; position: relative; overflow: hidden;">
-        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('data:image/svg+xml,<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg"><circle cx="30" cy="30" r="1.5" fill="rgba(255,255,255,0.1)"/></svg>') repeat;"></div>
         <div class="container" style="position: relative; z-index: 1;">
             <div style="max-width: 800px; margin: 0 auto; text-align: center;">
                 <h2 style="font-family: var(--font-heading); font-size: clamp(2.2rem, 5vw, 3.5rem); color: white; margin-bottom: 25px; line-height: 1.3;">
@@ -493,5 +608,113 @@
     </footer>
 
     <script src="js/app.js"></script>
+    <script>
+        // Slider functionality
+        const slider = document.getElementById('activitiesSlider');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const dots = document.querySelectorAll('.dot');
+        let currentSlide = 0;
+        const totalSlides = 5;
+        
+        const gradients = [
+            'linear-gradient(135deg, #FF6B9D, #FF8FA3)',
+            'linear-gradient(135deg, #4ECDC4, #5DD9D1)',
+            'linear-gradient(135deg, #FFE66D, #FFF099)',
+            'linear-gradient(135deg, #A78BFA, #DDA0DD)',
+            'linear-gradient(135deg, #4ECDC4, #5DD9D1)'
+        ];
+
+        function updateSlider() {
+            slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            // Update dots with smooth animations
+            dots.forEach((dot, index) => {
+                if (index === currentSlide) {
+                    dot.style.width = '40px';
+                    dot.style.borderRadius = '10px';
+                    dot.style.background = gradients[index];
+                    dot.style.boxShadow = '0 4px 10px rgba(255, 107, 157, 0.3)';
+                } else {
+                    dot.style.width = '8px';
+                    dot.style.borderRadius = '50%';
+                    dot.style.background = '#ddd';
+                    dot.style.boxShadow = 'none';
+                }
+            });
+        }
+
+        prevBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateSlider();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateSlider();
+        });
+
+        // Dot navigation
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentSlide = index;
+                updateSlider();
+            });
+            
+            // Hover effect for dots
+            dot.addEventListener('mouseenter', () => {
+                if (index !== currentSlide) {
+                    dot.style.background = gradients[index];
+                    dot.style.transform = 'scale(1.3)';
+                    dot.style.boxShadow = '0 4px 10px rgba(0, 0, 0, 0.2)';
+                }
+            });
+            
+            dot.addEventListener('mouseleave', () => {
+                if (index !== currentSlide) {
+                    dot.style.background = '#ddd';
+                    dot.style.transform = 'scale(1)';
+                    dot.style.boxShadow = 'none';
+                }
+            });
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+                updateSlider();
+            } else if (e.key === 'ArrowRight') {
+                currentSlide = (currentSlide + 1) % totalSlides;
+                updateSlider();
+            }
+        });
+
+        // Touch/swipe support for mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        slider.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        slider.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            if (touchEndX < touchStartX - 50) {
+                // Swipe left
+                currentSlide = (currentSlide + 1) % totalSlides;
+                updateSlider();
+            }
+            if (touchEndX > touchStartX + 50) {
+                // Swipe right
+                currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+                updateSlider();
+            }
+        }
+    </script>
 </body>
 </html>

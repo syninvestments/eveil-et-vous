@@ -443,6 +443,40 @@
         </div>
     </header>
 
+    <!-- ===== BANNIÈRE ANNIVERSAIRES & PRIVATISATION ===== -->
+    <div style="background: linear-gradient(135deg, #FF6B9D 0%, #4ECDC4 50%, #A78BFA 100%); padding: 15px 0; position: relative; overflow: hidden;">
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent); animation: shimmer 3s infinite;"></div>
+        <div class="container" style="position: relative; z-index: 1;">
+            <div style="display: flex; align-items: center; justify-content: center; gap: 30px; flex-wrap: wrap; text-align: center;">
+                <!-- Anniversaires -->
+                <div style="display: flex; align-items: center; gap: 12px;">
+                    <span style="font-size: 1.8rem;">🎂</span>
+                    <span style="color: white; font-weight: 600; font-size: 1.05rem; text-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+                        Anniversaires E&V - Fêtez en famille !
+                    </span>
+                </div>
+                <div style="width: 2px; height: 30px; background: rgba(255, 255, 255, 0.3);"></div>
+                <!-- Privatisation -->
+                <div style="display: flex; align-items: center; gap: 12px;">
+                    <span style="font-size: 1.8rem;">🏢</span>
+                    <span style="color: white; font-weight: 600; font-size: 1.05rem; text-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+                        Privatisation pour vos événements
+                    </span>
+                </div>
+                <a href="contact.html" style="background: white; color: #FF6B9D; padding: 10px 25px; border-radius: 25px; text-decoration: none; font-weight: 700; font-size: 0.95rem; box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: all 0.3s ease; margin-left: 15px;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 6px 20px rgba(0,0,0,0.3)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 15px rgba(0,0,0,0.2)';">
+                    📧 Nous contacter
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <style>
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+    </style>
+
     <!-- ===== HERO ===== -->
     <section class="hero-new hero-with-pictos">
         <div class="container">
@@ -450,12 +484,12 @@
                 <div class="hero-text">
                     <h1>Des séjours pensés pour eux, des moments précieux pour vous.</h1>
                     <p class="subtitle">
-                        Au cœur de la nature, des activités guidées (sensoriel, émotionnel, corporel, spirituel, intellectuel) pour favoriser l'éveil, renforcer le lien parent-enfant et installer des rituels apaisants.
+                        Dans un cadre sain et préservé, des ateliers d'éveil sous des formes ludiques et variées pour renforcer le lien parent-enfant et installer des rituels apaisants.
                     </p>
                     
                     <ul class="hero-bullets">
                         <li><strong>Âges :</strong> 4–12 ans</li>
-                        <li><strong>Formule :</strong> Séjours à la semaine</li>
+                        <li><strong>Formule :</strong> Séjours à la semaine (pendant les vacances scolaires)</li>
                         <li><strong>Encadrement bienveillant</strong> par pros certifiés</li>
                         <li><strong>Repas sains</strong> / activités outdoor</li>
                     </ul>
@@ -487,8 +521,8 @@
                     <h3>Éveil global</h3>
                     <p>Stimuler sans surcharger, apprendre à se recentrer.</p>
                     <div class="pillar-examples">
-                        <strong>Exemples :</strong>
-                        <p>Boîte à odeurs, parcours moteur, "thermomètre des émotions", jeux d'attention.</p>
+                        <strong>Activités :</strong>
+                        <p>Lecture, jeux coopératifs, danse, yoga, cuisine.</p>
                     </div>
                 </div>
                 
@@ -497,8 +531,8 @@
                     <h3>Accompagnement parental</h3>
                     <p>Renforcer le lien, retrouver des moments simples et efficaces.</p>
                     <div class="pillar-examples">
-                        <strong>Exemples :</strong>
-                        <p>Fiches-rituels, respiration 4-4, routine du soir, mots-clés pour nommer les émotions.</p>
+                        <strong>Activités :</strong>
+                        <p>Ateliers de gestion des émotions, cercle de parole, clés pour un quotidien apaisé.</p>
                     </div>
                 </div>
                 
@@ -507,8 +541,8 @@
                     <h3>Cadre nature & bienveillance</h3>
                     <p>Apaiser, sécuriser, favoriser l'autonomie.</p>
                     <div class="pillar-examples">
-                        <strong>Exemples :</strong>
-                        <p>Activités outdoor, temps libres guidés, repas sains, groupes 8–12 enfants.</p>
+                        <strong>Activités :</strong>
+                        <p>Balade sensorielle en forêt, culture du potager, repas sains et équilibrés, groupe 7-12 enfants.</p>
                     </div>
                 </div>
             </div>
@@ -567,78 +601,98 @@
                 </div>
                 <h2 class="section-title-center">Nos Ateliers Hebdomadaires</h2>
                 <p class="section-subtitle">
-                    Enfants seuls ou en duo avec les parents, autour des mêmes thématiques d'éveil
+                    L'éveil de nos enfants tout au long de l'année en suivant les saisons
                 </p>
             </div>
             
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 35px; margin-bottom: 50px;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 35px; margin-bottom: 50px;">
                 
-                <!-- Atelier Mercredi -->
-                <div style="background: linear-gradient(135deg, rgba(255, 181, 197, 0.08), rgba(255, 229, 181, 0.08)); padding: 45px 35px; border-radius: 30px; box-shadow: 0 15px 40px rgba(0,0,0,0.08); border: 3px solid rgba(255, 181, 197, 0.3); transition: all 0.3s;">
-                    <div style="background: var(--primary-color); width: 70px; height: 70px; border-radius: 20px; display: flex; align-items: center; justify-content: center; margin-bottom: 25px; box-shadow: 0 10px 25px rgba(255, 181, 197, 0.3);">
+                <!-- Ateliers E&V Solo du Mercredi -->
+                <div style="background: linear-gradient(135deg, rgba(255, 181, 197, 0.08), rgba(255, 229, 181, 0.08)); padding: 40px 30px; border-radius: 30px; box-shadow: 0 15px 40px rgba(0,0,0,0.08); border: 3px solid rgba(255, 181, 197, 0.3); transition: all 0.3s;">
+                    <div style="background: #FF6B9D; width: 70px; height: 70px; border-radius: 20px; display: flex; align-items: center; justify-content: center; margin-bottom: 25px; box-shadow: 0 10px 25px rgba(255, 181, 197, 0.3);">
                         <span style="font-size: 2.2rem;">🎨</span>
                     </div>
-                    <h3 style="font-family: var(--font-heading); font-size: 1.9rem; margin-bottom: 15px; color: var(--text-color);">
-                        Ateliers du Mercredi
+                    <h3 style="font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 15px; color: #1A1A2E;">
+                        Ateliers E&V Solo
                     </h3>
-                    <p style="font-size: 1.05rem; line-height: 1.7; color: #666; margin-bottom: 25px;">
-                        <strong style="color: var(--primary-color);">Pour qui :</strong> Enfants 4-12 ans<br>
-                        <strong style="color: var(--primary-color);">Quand :</strong> Mercredis 10h-11h30 ou 14h30-16h
+                    <p style="font-size: 1.05rem; line-height: 1.7; color: #666; margin-bottom: 20px;">
+                        <strong style="color: #FF6B9D;">Mercredi</strong> en Solo (2h)<br>
+                        14h30 - 16h30
                     </p>
-                    <ul style="list-style: none; padding: 0; margin-bottom: 30px;">
-                        <li style="padding: 10px 0; padding-left: 30px; position: relative; color: #666;">
-                            <span style="position: absolute; left: 0; color: var(--primary-color); font-size: 1.2rem;">✦</span>
-                            Éveil créatif & sensoriel
+                    <ul style="list-style: none; padding: 0; margin-bottom: 25px; font-size: 0.95rem; line-height: 1.8; color: #666;">
+                        <li style="padding: 6px 0; padding-left: 25px; position: relative;">
+                            <span style="position: absolute; left: 0; color: #FF6B9D;">✦</span>
+                            Je plante, je cultive, je cuisine
                         </li>
-                        <li style="padding: 10px 0; padding-left: 30px; position: relative; color: #666;">
-                            <span style="position: absolute; left: 0; color: var(--primary-color); font-size: 1.2rem;">✦</span>
-                            Yoga & relaxation
+                        <li style="padding: 6px 0; padding-left: 25px; position: relative;">
+                            <span style="position: absolute; left: 0; color: #FF6B9D;">✦</span>
+                            Décoration de citrouille et Halloween
                         </li>
-                        <li style="padding: 10px 0; padding-left: 30px; position: relative; color: #666;">
-                            <span style="position: absolute; left: 0; color: var(--primary-color); font-size: 1.2rem;">✦</span>
-                            Gestion des émotions
+                        <li style="padding: 6px 0; padding-left: 25px; position: relative;">
+                            <span style="position: absolute; left: 0; color: #FF6B9D;">✦</span>
+                            Noël et ses couronnes de l'avent
                         </li>
-                        <li style="padding: 10px 0; padding-left: 30px; position: relative; color: #666;">
-                            <span style="position: absolute; left: 0; color: var(--primary-color); font-size: 1.2rem;">✦</span>
-                            Activités nature
+                        <li style="padding: 6px 0; padding-left: 25px; position: relative;">
+                            <span style="position: absolute; left: 0; color: #FF6B9D;">✦</span>
+                            Les émotions et bien d'autres
                         </li>
                     </ul>
-                    <a href="ateliers.html" style="display: inline-block; background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); color: white; padding: 14px 30px; border-radius: 25px; text-decoration: none; font-weight: 600; box-shadow: 0 8px 25px rgba(255, 181, 197, 0.3); width: 100%; text-align: center; transition: all 0.3s;">
+                    <a href="ateliers.html" style="display: inline-block; background: linear-gradient(135deg, #FF6B9D, #4ECDC4); color: white; padding: 14px 30px; border-radius: 25px; text-decoration: none; font-weight: 600; box-shadow: 0 8px 25px rgba(255, 181, 197, 0.3); width: 100%; text-align: center; transition: all 0.3s;">
                         En savoir plus
                     </a>
                 </div>
                 
-                <!-- Atelier Samedi -->
-                <div style="background: linear-gradient(135deg, rgba(181, 232, 224, 0.08), rgba(213, 181, 232, 0.08)); padding: 45px 35px; border-radius: 30px; box-shadow: 0 15px 40px rgba(0,0,0,0.08); border: 3px solid rgba(181, 232, 224, 0.3); transition: all 0.3s;">
-                    <div style="background: var(--secondary-color); width: 70px; height: 70px; border-radius: 20px; display: flex; align-items: center; justify-content: center; margin-bottom: 25px; box-shadow: 0 10px 25px rgba(181, 232, 224, 0.3);">
+                <!-- Ateliers E&V Duo du Samedi -->
+                <div style="background: linear-gradient(135deg, rgba(181, 232, 224, 0.08), rgba(213, 181, 232, 0.08)); padding: 40px 30px; border-radius: 30px; box-shadow: 0 15px 40px rgba(0,0,0,0.08); border: 3px solid rgba(181, 232, 224, 0.3); transition: all 0.3s;">
+                    <div style="background: #4ECDC4; width: 70px; height: 70px; border-radius: 20px; display: flex; align-items: center; justify-content: center; margin-bottom: 25px; box-shadow: 0 10px 25px rgba(181, 232, 224, 0.3);">
                         <span style="font-size: 2.2rem;">👨‍👩‍👧</span>
                     </div>
-                    <h3 style="font-family: var(--font-heading); font-size: 1.9rem; margin-bottom: 15px; color: var(--text-color);">
-                        Ateliers du Samedi
+                    <h3 style="font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 15px; color: #1A1A2E;">
+                        Ateliers E&V Duo
                     </h3>
-                    <p style="font-size: 1.05rem; line-height: 1.7; color: #666; margin-bottom: 25px;">
-                        <strong style="color: var(--secondary-color);">Pour qui :</strong> Duo parent-enfant<br>
-                        <strong style="color: var(--secondary-color);">Quand :</strong> Samedis 10h-11h30 ou 14h30-16h
+                    <p style="font-size: 1.05rem; line-height: 1.7; color: #666; margin-bottom: 20px;">
+                        <strong style="color: #4ECDC4;">Samedi</strong> en Duo (2h)<br>
+                        14h30 - 16h30
                     </p>
-                    <ul style="list-style: none; padding: 0; margin-bottom: 30px;">
-                        <li style="padding: 10px 0; padding-left: 30px; position: relative; color: #666;">
-                            <span style="position: absolute; left: 0; color: var(--secondary-color); font-size: 1.2rem;">✦</span>
-                            Éveil créatif & sensoriel
+                    <ul style="list-style: none; padding: 0; margin-bottom: 25px; font-size: 0.95rem; line-height: 1.8; color: #666;">
+                        <li style="padding: 6px 0; padding-left: 25px; position: relative;">
+                            <span style="position: absolute; left: 0; color: #4ECDC4;">✦</span>
+                            Je plante, je cultive, je cuisine
                         </li>
-                        <li style="padding: 10px 0; padding-left: 30px; position: relative; color: #666;">
-                            <span style="position: absolute; left: 0; color: var(--secondary-color); font-size: 1.2rem;">✦</span>
-                            Yoga & relaxation
+                        <li style="padding: 6px 0; padding-left: 25px; position: relative;">
+                            <span style="position: absolute; left: 0; color: #4ECDC4;">✦</span>
+                            Décoration de citrouille et Halloween
                         </li>
-                        <li style="padding: 10px 0; padding-left: 30px; position: relative; color: #666;">
-                            <span style="position: absolute; left: 0; color: var(--secondary-color); font-size: 1.2rem;">✦</span>
-                            Gestion des émotions
+                        <li style="padding: 6px 0; padding-left: 25px; position: relative;">
+                            <span style="position: absolute; left: 0; color: #4ECDC4;">✦</span>
+                            Noël et ses couronnes de l'avent
                         </li>
-                        <li style="padding: 10px 0; padding-left: 30px; position: relative; color: #666;">
-                            <span style="position: absolute; left: 0; color: var(--secondary-color); font-size: 1.2rem;">✦</span>
-                            Activités nature
+                        <li style="padding: 6px 0; padding-left: 25px; position: relative;">
+                            <span style="position: absolute; left: 0; color: #4ECDC4;">✦</span>
+                            Les émotions et bien d'autres
                         </li>
                     </ul>
-                    <a href="ateliers.html" style="display: inline-block; background: linear-gradient(135deg, var(--secondary-color), var(--purple)); color: white; padding: 14px 30px; border-radius: 25px; text-decoration: none; font-weight: 600; box-shadow: 0 8px 25px rgba(181, 232, 224, 0.3); width: 100%; text-align: center; transition: all 0.3s;">
+                    <a href="ateliers.html" style="display: inline-block; background: linear-gradient(135deg, #4ECDC4, #A78BFA); color: white; padding: 14px 30px; border-radius: 25px; text-decoration: none; font-weight: 600; box-shadow: 0 8px 25px rgba(181, 232, 224, 0.3); width: 100%; text-align: center; transition: all 0.3s;">
+                        En savoir plus
+                    </a>
+                </div>
+
+                <!-- Ateliers MMM Juniors -->
+                <div style="background: linear-gradient(135deg, rgba(197, 168, 224, 0.08), rgba(255, 214, 153, 0.08)); padding: 40px 30px; border-radius: 30px; box-shadow: 0 15px 40px rgba(0,0,0,0.08); border: 3px solid rgba(197, 168, 224, 0.3); transition: all 0.3s;">
+                    <div style="background: #A78BFA; width: 70px; height: 70px; border-radius: 20px; display: flex; align-items: center; justify-content: center; margin-bottom: 25px; box-shadow: 0 10px 25px rgba(197, 168, 224, 0.3);">
+                        <span style="font-size: 2.2rem;">✨</span>
+                    </div>
+                    <h3 style="font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 15px; color: #1A1A2E;">
+                        Ateliers MMM Juniors
+                    </h3>
+                    <p style="font-size: 1.05rem; line-height: 1.7; color: #666; margin-bottom: 20px;">
+                        <strong style="color: #A78BFA;">Durée :</strong> 1h30
+                    </p>
+                    <div style="font-size: 0.95rem; line-height: 1.7; color: #666; margin-bottom: 20px;">
+                        <p style="margin-bottom: 15px;"><strong>MMM (Mon Moment Magique)</strong> est la 1ère marque francophone d'ateliers bien-être avec <strong>1 000 000 de participants</strong>. Un rayonnement mondial grâce à ses 1 000 ambassadrices formées.</p>
+                        <p style="font-style: italic; color: #A78BFA; font-weight: 500;">Animation 2 fois par semaine dans nos espaces</p>
+                    </div>
+                    <a href="https://www.monmomentmagique.com/les-ateliers/?type=26" target="_blank" rel="noopener noreferrer" style="display: inline-block; background: linear-gradient(135deg, #A78BFA, #B565D8); color: white; padding: 14px 30px; border-radius: 25px; text-decoration: none; font-weight: 600; box-shadow: 0 8px 25px rgba(197, 168, 224, 0.3); width: 100%; text-align: center; transition: all 0.3s;">
                         En savoir plus
                     </a>
                 </div>
@@ -906,6 +960,63 @@
                         Nous disposons de salles d'activités couvertes et adaptons le programme. La nature reste accessible avec un équipement adapté (fourni sur place).
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ANNIVERSAIRES & PRIVATISATION ===== -->
+    <section class="section" style="background: linear-gradient(135deg, rgba(255, 181, 197, 0.05), rgba(181, 232, 224, 0.05)); padding: 80px 0;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; max-width: 1200px; margin: 0 auto;">
+                
+                <!-- Anniversaires -->
+                <div style="background: white; padding: 50px 40px; border-radius: 30px; box-shadow: 0 20px 60px rgba(0,0,0,0.1); text-align: center; border: 3px solid rgba(255, 107, 157, 0.2); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 30px 70px rgba(0,0,0,0.15)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 20px 60px rgba(0,0,0,0.1)';">
+                    <div style="width: 100px; height: 100px; background: linear-gradient(135deg, #FF6B9D, #FF8FA3); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 30px; box-shadow: 0 15px 35px rgba(255, 107, 157, 0.3);">
+                        <span style="font-size: 3.5rem;">🎂</span>
+                    </div>
+                    <h3 style="font-family: var(--font-heading); font-size: 2rem; margin-bottom: 20px; color: #1A1A2E;">
+                        Les Anniversaires E&V
+                    </h3>
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: #666; margin-bottom: 30px;">
+                        Venez fêter l'anniversaire de votre enfant chez Éveil & Vous ! Une expérience unique et mémorable avec des activités d'éveil ludiques et créatives.
+                    </p>
+                    <div style="background: linear-gradient(135deg, rgba(255, 107, 157, 0.1), rgba(255, 143, 163, 0.05)); padding: 25px; border-radius: 20px; margin-bottom: 30px;">
+                        <p style="font-size: 1rem; color: #666; margin-bottom: 15px;">
+                            <strong style="color: #FF6B9D;">🎈 Formule sur mesure</strong>
+                        </p>
+                        <p style="font-size: 0.95rem; line-height: 1.7; color: #666;">
+                            Activités thématiques • Goûter festif • Décoration personnalisée • Groupe 7-12 enfants
+                        </p>
+                    </div>
+                    <a href="contact.html" style="display: inline-block; background: linear-gradient(135deg, #FF6B9D, #FF8FA3); color: white; padding: 16px 35px; border-radius: 30px; text-decoration: none; font-weight: 600; font-size: 1.05rem; box-shadow: 0 10px 25px rgba(255, 107, 157, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 15px 35px rgba(255, 107, 157, 0.4)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 25px rgba(255, 107, 157, 0.3)';">
+                        📧 Contactez-nous pour plus d'infos
+                    </a>
+                </div>
+
+                <!-- Privatisation -->
+                <div style="background: white; padding: 50px 40px; border-radius: 30px; box-shadow: 0 20px 60px rgba(0,0,0,0.1); text-align: center; border: 3px solid rgba(78, 205, 196, 0.2); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 30px 70px rgba(0,0,0,0.15)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 20px 60px rgba(0,0,0,0.1)';">
+                    <div style="width: 100px; height: 100px; background: linear-gradient(135deg, #4ECDC4, #5DD9D1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 30px; box-shadow: 0 15px 35px rgba(78, 205, 196, 0.3);">
+                        <span style="font-size: 3.5rem;">🏢</span>
+                    </div>
+                    <h3 style="font-family: var(--font-heading); font-size: 2rem; margin-bottom: 20px; color: #1A1A2E;">
+                        Privatisation du Lieu
+                    </h3>
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: #666; margin-bottom: 30px;">
+                        Organisez vos événements professionnels dans un cadre naturel et apaisant. Séminaires, team building, retraites... tout est possible !
+                    </p>
+                    <div style="background: linear-gradient(135deg, rgba(78, 205, 196, 0.1), rgba(93, 217, 209, 0.05)); padding: 25px; border-radius: 20px; margin-bottom: 30px;">
+                        <p style="font-size: 1rem; color: #666; margin-bottom: 15px;">
+                            <strong style="color: #4ECDC4;">🌿 Espace privilégié</strong>
+                        </p>
+                        <p style="font-size: 0.95rem; line-height: 1.7; color: #666;">
+                            Séminaires • Team building • Retraites bien-être • Événements sur mesure
+                        </p>
+                    </div>
+                    <a href="contact.html" style="display: inline-block; background: linear-gradient(135deg, #4ECDC4, #5DD9D1); color: white; padding: 16px 35px; border-radius: 30px; text-decoration: none; font-weight: 600; font-size: 1.05rem; box-shadow: 0 10px 25px rgba(78, 205, 196, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 15px 35px rgba(78, 205, 196, 0.4)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 25px rgba(78, 205, 196, 0.3)';">
+                        📧 Demander un devis
+                    </a>
+                </div>
+
             </div>
         </div>
     </section>
