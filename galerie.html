@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Galerie photos des ateliers et séjours Éveil & Vous - Découvrez nos activités en images">
+    <title>Galerie Photos | Éveil & Vous</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.cdnfonts.com/css/myriad-pro" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    
+    <style>
+        :root {
+            --primary: #FF8C42;
+            --turquoise: #4ECDC4;
+            --lavande: #A78BFA;
+            --vert: #6BCF7F;
+            --rose: #FF6B9D;
+        }
+
+        body {
+            font-family: 'Myriad Pro', sans-serif;
+        }
+
+        /* Filtres de catégories */
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 50px;
+        }
+
+        .filter-btn {
+            background: white;
+            border: 2px solid #ddd;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .filter-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .filter-btn.active {
+            background: linear-gradient(135deg, var(--primary), var(--turquoise));
+            color: white;
+            border-color: var(--primary);
+            box-shadow: 0 8px 25px rgba(255, 140, 66, 0.3);
+        }
+
+        /* Grille de photos */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            cursor: pointer;
+            aspect-ratio: 1;
+            transition: all 0.3s;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Style pour les cartes placeholder */
+        .placeholder-card {
+            cursor: default;
+        }
+
+        .placeholder-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .placeholder-card:hover > div {
+            transform: none;
+        }
+
+        .gallery-item-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            padding: 20px;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover .gallery-item-overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-item-title {
+            color: white;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .gallery-item-category {
+            color: rgba(255,255,255,0.8);
+            font-size: 0.9rem;
+        }
+
+        /* Lightbox Modal */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.95);
+            z-index: 10000;
+            padding: 20px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+        }
+
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 85vh;
+            object-fit: contain;
+            border-radius: 10px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: -50px;
+            right: 0;
+            background: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .lightbox-close:hover {
+            transform: rotate(90deg);
+            background: var(--primary);
+            color: white;
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .lightbox-nav:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .lightbox-prev {
+            left: -70px;
+        }
+
+        .lightbox-next {
+            right: -70px;
+        }
+
+        .lightbox-caption {
+            text-align: center;
+            color: white;
+            margin-top: 20px;
+            font-size: 1.1rem;
+        }
+
+        /* Section d'upload (pour vous) */
+        .upload-info {
+            background: linear-gradient(135deg, rgba(255, 140, 66, 0.1), rgba(78, 205, 196, 0.1));
+            padding: 40px;
+            border-radius: 25px;
+            text-align: center;
+            margin-bottom: 60px;
+            border: 2px dashed var(--primary);
+        }
+
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                gap: 15px;
+            }
+
+            .lightbox-nav {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+
+            .lightbox-prev {
+                left: 10px;
+            }
+
+            .lightbox-next {
+                right: 10px;
+            }
+        }
+
+        /* Animation d'apparition */
+        .gallery-item {
+            animation: fadeInUp 0.5s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header style="background: white; box-shadow: 0 2px 20px rgba(0,0,0,0.08); padding: 20px 0; position: sticky; top: 0; z-index: 1000;">
+        <div class="container">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <a href="index.html" style="text-decoration: none;">
+                    <img src="images/logo.png" alt="Éveil & Vous" style="height: 50px; width: auto;">
+                </a>
+                
+                <nav style="display: flex; gap: 35px; align-items: center;">
+                    <a href="about.html" style="color: #2D3436; text-decoration: none; font-weight: 500; transition: color 0.3s;">À Propos</a>
+                    <a href="activites.html" style="color: #2D3436; text-decoration: none; font-weight: 500; transition: color 0.3s;">Activités</a>
+                    <a href="ateliers.html" style="color: #2D3436; text-decoration: none; font-weight: 500; transition: color 0.3s;">Ateliers</a>
+                    <a href="galerie.html" style="color: var(--primary); text-decoration: none; font-weight: 600; border-bottom: 2px solid var(--primary);">Galerie</a>
+                    <a href="contact.html" style="color: #2D3436; text-decoration: none; font-weight: 500; transition: color 0.3s;">Contact</a>
+                    <a href="reservation.html" style="background: linear-gradient(135deg, var(--primary), var(--turquoise)); color: white; padding: 12px 28px; border-radius: 25px; text-decoration: none; font-weight: 600; box-shadow: 0 5px 20px rgba(255, 140, 66, 0.3);">Réserver</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section style="background: linear-gradient(135deg, #FFF4E6 0%, #F0FFFE 50%, #F5F0FF 100%); padding: 80px 0; text-align: center;">
+        <div class="container">
+            <div style="display: inline-block; background: white; padding: 10px 25px; border-radius: 50px; margin-bottom: 20px; box-shadow: 0 8px 25px rgba(0,0,0,0.1);">
+                <span style="background: linear-gradient(90deg, var(--primary), var(--turquoise)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700; font-size: 1rem;">📸 NOTRE GALERIE</span>
+            </div>
+            <h1 style="font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 20px; color: #1A1A2E; font-weight: 700;">
+                Nos Plus Beaux Moments
+            </h1>
+            <p style="font-size: 1.25rem; color: #555; max-width: 700px; margin: 0 auto;">
+                Découvrez en images l'atmosphère magique de nos ateliers et séjours
+            </p>
+        </div>
+    </section>
+
+    <!-- FILTRES -->
+    <section style="padding: 60px 0 40px; background: white;">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">
+                    ✨ Toutes les photos
+                </button>
+                <button class="filter-btn" data-filter="ateliers">
+                    🎨 Ateliers
+                </button>
+                <button class="filter-btn" data-filter="sejours">
+                    🏕️ Séjours
+                </button>
+                <button class="filter-btn" data-filter="solo">
+                    👤 E&V Solo
+                </button>
+                <button class="filter-btn" data-filter="duo">
+                    👨‍👩‍👧 E&V Duo
+                </button>
+                <button class="filter-btn" data-filter="mmm">
+                    ✨ MMM Junior
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERIE DE PHOTOS -->
+    <section style="padding: 0 0 80px; background: white;">
+        <div class="container">
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- PHOTOS EN ATTENTE - À remplacer par vos vraies images -->
+                
+                <!-- Photos Ateliers Solo -->
+                <div class="gallery-item placeholder-card" data-category="ateliers solo" data-title="Photo à venir" data-description="E&V Solo - Atelier créatif">
+                    <div style="background: linear-gradient(135deg, rgba(255, 140, 66, 0.1), rgba(255, 187, 153, 0.1)); width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 15px;">
+                        <div style="font-size: 4rem; opacity: 0.4;">📸</div>
+                        <div style="font-size: 1.1rem; font-weight: 600; color: #FF8C42;">Photo à venir</div>
+                        <div style="font-size: 0.9rem; color: #999;">Atelier créatif</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item placeholder-card" data-category="ateliers solo" data-title="Photo à venir" data-description="E&V Solo - Éveil sensoriel">
+                    <div style="background: linear-gradient(135deg, rgba(255, 140, 66, 0.1), rgba(255, 187, 153, 0.1)); width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 15px;">
+                        <div style="font-size: 4rem; opacity: 0.4;">🎨</div>
+                        <div style="font-size: 1.1rem; font-weight: 600; color: #FF8C42;">Photo à venir</div>
+                        <div style="font-size: 0.9rem; color: #999;">Éveil sensoriel</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item placeholder-card" data-category="ateliers solo" data-title="Photo à venir" data-description="E&V Solo - Yoga & relaxation">
+                    <div style="background: linear-gradient(135deg, rgba(255, 140, 66, 0.1), rgba(255, 187, 153, 0.1)); width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 15px;">
+                        <div style="font-size: 4rem; opacity: 0.4;">🧘</div>
+                        <div style="font-size: 1.1rem; font-weight: 600; color: #FF8C42;">Photo à venir</div>
+                        <div style="font-size: 0.9rem; color: #999;">Yoga & relaxation</div>
+                    </div>
+                </div>
+
+                <!-- Photos Ateliers Duo -->
+                <div class="gallery-item placeholder-card" data-category="ateliers duo" data-title="Photo à venir" data-description="E&V Duo - Complicité parent-enfant">
+                    <div style="background: linear-gradient(135deg, rgba(78, 205, 196, 0.1), rgba(168, 213, 232, 0.1)); width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 15px;">
+                        <div style="font-size: 4rem; opacity: 0.4;">👨‍👩‍👧</div>
+                        <div style="font-size: 1.1rem; font-weight: 600; color: #4ECDC4;">Photo à venir</div>
+                        <div style="font-size: 0.9rem; color: #999;">Atelier duo</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item placeholder-card" data-category="ateliers duo" data-title="Photo à venir" data-description="E&V Duo - Création en famille">
+                    <div style="background: linear-gradient(135deg, rgba(78, 205, 196, 0.1), rgba(168, 213, 232, 0.1)); width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 15px;">
+                        <div style="font-size: 4rem; opacity: 0.4;">🎨</div>
+                        <div style="font-size: 1.1rem; font-weight: 600; color: #4ECDC4;">Photo à venir</div>
+                        <div style="font-size: 0.9rem; color: #999;">Création partagée</div>
+                    </div>
+                </div>
+
+                <!-- Photos MMM Junior -->
+                <div class="gallery-item placeholder-card" data-category="ateliers mmm" data-title="Photo à venir" data-description="MMM Junior - Mon Moment Magique">
+                    <div style="background: linear-gradient(135deg, rgba(167, 139, 250, 0.1), rgba(255, 140, 66, 0.1)); width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 15px;">
+                        <div style="font-size: 4rem; opacity: 0.4;">✨</div>
+                        <div style="font-size: 1.1rem; font-weight: 600; color: #A78BFA;">Photo à venir</div>
+                        <div style="font-size: 0.9rem; color: #999;">Moment magique</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item placeholder-card" data-category="ateliers mmm" data-title="Photo à venir" data-description="MMM Junior - Relaxation guidée">
+                    <div style="background: linear-gradient(135deg, rgba(167, 139, 250, 0.1), rgba(255, 140, 66, 0.1)); width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 15px;">
+                        <div style="font-size: 4rem; opacity: 0.4;">🌙</div>
+                        <div style="font-size: 1.1rem; font-weight: 600; color: #A78BFA;">Photo à venir</div>
+                        <div style="font-size: 0.9rem; color: #999;">Relaxation</div>
+                    </div>
+                </div>
+
+                <!-- Photos Séjours -->
+                <div class="gallery-item placeholder-card" data-category="sejours" data-title="Photo à venir" data-description="Séjours - Hébergement en dôme">
+                    <div style="background: linear-gradient(135deg, rgba(107, 207, 127, 0.1), rgba(255, 214, 153, 0.1)); width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 15px;">
+                        <div style="font-size: 4rem; opacity: 0.4;">🏕️</div>
+                        <div style="font-size: 1.1rem; font-weight: 600; color: #6BCF7F;">Photo à venir</div>
+                        <div style="font-size: 0.9rem; color: #999;">Hébergement</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item placeholder-card" data-category="sejours" data-title="Photo à venir" data-description="Séjours - Activités nature">
+                    <div style="background: linear-gradient(135deg, rgba(107, 207, 127, 0.1), rgba(255, 214, 153, 0.1)); width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 15px;">
+                        <div style="font-size: 4rem; opacity: 0.4;">🌳</div>
+                        <div style="font-size: 1.1rem; font-weight: 600; color: #6BCF7F;">Photo à venir</div>
+                        <div style="font-size: 0.9rem; color: #999;">Activités nature</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item placeholder-card" data-category="sejours" data-title="Photo à venir" data-description="Séjours - Repas partagés">
+                    <div style="background: linear-gradient(135deg, rgba(107, 207, 127, 0.1), rgba(255, 214, 153, 0.1)); width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 15px;">
+                        <div style="font-size: 4rem; opacity: 0.4;">🍽️</div>
+                        <div style="font-size: 1.1rem; font-weight: 600; color: #6BCF7F;">Photo à venir</div>
+                        <div style="font-size: 0.9rem; color: #999;">Repas en famille</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item placeholder-card" data-category="sejours" data-title="Photo à venir" data-description="Séjours - Notre potager">
+                    <div style="background: linear-gradient(135deg, rgba(107, 207, 127, 0.1), rgba(255, 214, 153, 0.1)); width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 15px;">
+                        <div style="font-size: 4rem; opacity: 0.4;">🥕</div>
+                        <div style="font-size: 1.1rem; font-weight: 600; color: #6BCF7F;">Photo à venir</div>
+                        <div style="font-size: 0.9rem; color: #999;">Potager</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item placeholder-card" data-category="sejours" data-title="Photo à venir" data-description="Séjours - Jeux en groupe">
+                    <div style="background: linear-gradient(135deg, rgba(107, 207, 127, 0.1), rgba(255, 214, 153, 0.1)); width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 15px;">
+                        <div style="font-size: 4rem; opacity: 0.4;">🎮</div>
+                        <div style="font-size: 1.1rem; font-weight: 600; color: #6BCF7F;">Photo à venir</div>
+                        <div style="font-size: 0.9rem; color: #999;">Jeux collectifs</div>
+                    </div>
+                </div>
+
+                <!-- Vous pouvez facilement ajouter plus de cartes "Photo à venir" ici -->
+                
+            </div>
+
+            <div style="text-align: center; margin-top: 40px;">
+                <p style="color: #999; font-size: 0.95rem; margin-bottom: 10px;">
+                    📸 Photos à venir prochainement...
+                </p>
+                <p style="color: #666; font-size: 0.9rem;">
+                    Suivez-nous sur les réseaux sociaux pour découvrir nos ateliers en images !
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- LIGHTBOX MODAL -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+            <button class="lightbox-nav lightbox-prev" onclick="changeImage(-1)">‹</button>
+            <img id="lightboxImage" src="" alt="">
+            <button class="lightbox-nav lightbox-next" onclick="changeImage(1)">›</button>
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+    </div>
+
+    <!-- CTA SECTION -->
+    <section style="background: linear-gradient(135deg, var(--primary) 0%, var(--turquoise) 50%, var(--lavande) 100%); padding: 80px 0; text-align: center;">
+        <div class="container">
+            <h2 style="font-size: clamp(2rem, 4vw, 3rem); color: white; margin-bottom: 20px; font-weight: 700;">
+                Envie de vivre ces moments ?
+            </h2>
+            <p style="font-size: 1.2rem; color: rgba(255,255,255,0.95); margin-bottom: 35px;">
+                Rejoignez-nous pour des ateliers ou un séjour inoubliable
+            </p>
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                <a href="ateliers.html" style="background: white; color: var(--primary); padding: 18px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; font-size: 1.1rem; box-shadow: 0 10px 30px rgba(0,0,0,0.2); transition: transform 0.3s;">
+                    🎨 Découvrir les ateliers
+                </a>
+                <a href="reservation.html" style="background: rgba(255,255,255,0.2); backdrop-filter: blur(10px); color: white; padding: 18px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; font-size: 1.1rem; border: 2px solid white; transition: all 0.3s;">
+                    🏕️ Réserver un séjour
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer style="background: #2D3436; color: white; padding: 60px 0 20px;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px;">
+                <div>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 15px; color: white;">Éveil & Vous</h3>
+                    <p style="color: rgba(255,255,255,0.7); line-height: 1.6;">Éveil en famille au milieu de la nature</p>
+                </div>
+                <div>
+                    <h3 style="font-size: 1.2rem; margin-bottom: 15px; color: white;">Pages</h3>
+                    <p><a href="about.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">À Propos</a></p>
+                    <p><a href="activites.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">Activités</a></p>
+                    <p><a href="ateliers.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">Ateliers</a></p>
+                    <p><a href="galerie.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">Galerie</a></p>
+                    <p><a href="reservation.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">Réserver</a></p>
+                    <p><a href="contact.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">Contact</a></p>
+                </div>
+                <div>
+                    <h3 style="font-size: 1.2rem; margin-bottom: 15px; color: white;">Contact</h3>
+                    <p style="color: rgba(255,255,255,0.7); line-height: 1.6;">Limoux, Aude (11)<br>contact@eveil-vous.fr</p>
+                </div>
+                <div>
+                    <h3 style="font-size: 1.2rem; margin-bottom: 15px; color: white;">Suivez-nous</h3>
+                    <div style="display: flex; gap: 15px;">
+                        <a href="#" style="color: rgba(255,255,255,0.7); font-size: 1.3rem;"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" style="color: rgba(255,255,255,0.7); font-size: 1.3rem;"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; text-align: center;">
+                <p style="color: rgba(255,255,255,0.5);">&copy; 2025 Éveil & Vous - Tous droits réservés</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Système de filtrage
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Retirer la classe active de tous les boutons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Ajouter la classe active au bouton cliqué
+                button.classList.add('active');
+
+                const filter = button.getAttribute('data-filter');
+
+                galleryItems.forEach(item => {
+                    const category = item.getAttribute('data-category');
+                    
+                    if (filter === 'all' || category.includes(filter)) {
+                        item.style.display = 'block';
+                        // Animation d'apparition
+                        item.style.animation = 'fadeInUp 0.5s ease';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Lightbox functionality
+        let currentImageIndex = 0;
+        let currentImages = [];
+
+        galleryItems.forEach((item, index) => {
+            item.addEventListener('click', () => {
+                // Ne pas ouvrir le lightbox pour les cartes placeholder
+                if (item.classList.contains('placeholder-card')) {
+                    return;
+                }
+                
+                currentImages = Array.from(galleryItems).filter(i => i.style.display !== 'none' && !i.classList.contains('placeholder-card'));
+                currentImageIndex = currentImages.indexOf(item);
+                openLightbox(item);
+            });
+        });
+
+        function openLightbox(item) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightboxImage');
+            const lightboxCaption = document.getElementById('lightboxCaption');
+            
+            const imgSrc = item.querySelector('img').src;
+            const title = item.getAttribute('data-title');
+            const description = item.getAttribute('data-description');
+            
+            lightboxImage.src = imgSrc;
+            lightboxCaption.innerHTML = `<strong>${title}</strong><br>${description}`;
+            
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function changeImage(direction) {
+            currentImageIndex += direction;
+            
+            if (currentImageIndex < 0) {
+                currentImageIndex = currentImages.length - 1;
+            } else if (currentImageIndex >= currentImages.length) {
+                currentImageIndex = 0;
+            }
+            
+            openLightbox(currentImages[currentImageIndex]);
+        }
+
+        // Fermer lightbox avec Escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') changeImage(-1);
+            if (e.key === 'ArrowRight') changeImage(1);
+        });
+
+        // Fermer lightbox en cliquant en dehors de l'image
+        document.getElementById('lightbox').addEventListener('click', (e) => {
+            if (e.target.id === 'lightbox') {
+                closeLightbox();
+            }
+        });
+    </script>
+
+    <script src="js/app.js"></script>
+    <script src="js/cookies.js"></script>
+</body>
+</html>

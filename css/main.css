@@ -4,10 +4,22 @@
 
 /* === VARIABLES === */
 :root {
-    /* Couleurs */
-    --primary: #FF6B9D;
-    --secondary: #4ECDC4;
-    --accent: #FFE66D;
+    /* Couleurs Arc-en-Ciel Principales */
+    --primary: #FF8C42;            /* Orange chaleureux (nouvelle couleur principale) */
+    --secondary: #4ECDC4;          /* Turquoise (conservé) */
+    --accent: #FFE66D;             /* Jaune soleil (conservé) */
+    
+    /* Palette Arc-en-Ciel Complète */
+    --rouge: #FF6B6B;              /* Rouge vitalité */
+    --orange: #FF8C42;             /* Orange énergie */
+    --jaune: #FFD93D;              /* Jaune joie */
+    --vert: #6BCF7F;               /* Vert nature */
+    --bleu: #4ECDC4;               /* Bleu turquoise */
+    --indigo: #6B7FFF;             /* Indigo calme */
+    --violet: #A78BFA;             /* Violet créativité */
+    --rose-accent: #FF6B9D;        /* Rose (accent uniquement) */
+    
+    /* Couleurs Neutres */
     --dark: #2D3436;
     --light: #F8F9FA;
     --white: #FFFFFF;

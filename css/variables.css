@@ -1,14 +1,28 @@
 :root {
-    /* Couleurs principales - Palette inspirée des pictos Éveil & Vous */
-    --primary-color: #F4A6B8;      /* Rose doux (ton picto) */
-    --primary-dark: #E88FA5;
-    --secondary-color: #9DD9CE;    /* Turquoise menthe (ton picto) */
-    --accent-color: #FFD699;       /* Pêche dorée (ton picto) */
-    --accent-light: #FFF0DB;
-    --purple: #C5A8E0;             /* Lavande douce (ton picto) */
-    --orange: #FFBB99;             /* Corail pastel (ton picto) */
-    --green: #B8E6B8;              /* Vert nature (ton picto) */
-    --blue: #A8D5E8;               /* Bleu ciel (ton picto) */
+    /* 🌈 PALETTE ARC-EN-CIEL - Éveil & Vous */
+    
+    /* Couleur principale (remplace le rose) */
+    --primary-color: #FF8C42;      /* Orange chaleureux - NOUVELLE couleur dominante */
+    --primary-dark: #E67832;       /* Orange foncé */
+    
+    /* Arc-en-ciel complet */
+    --rouge: #FF6B6B;              /* Rouge vitalité */
+    --orange: #FF8C42;             /* Orange énergie (primaire) */
+    --jaune: #FFD93D;              /* Jaune soleil */
+    --vert: #6BCF7F;               /* Vert nature */
+    --turquoise: #4ECDC4;          /* Turquoise sérénité */
+    --bleu: #6B9FFF;               /* Bleu ciel */
+    --indigo: #6B7FFF;             /* Indigo calme */
+    --violet: #A78BFA;             /* Violet créativité */
+    
+    /* Rose en accent uniquement (plus primaire) */
+    --rose-accent: #FF6B9D;        /* Rose doux - ACCENT SEULEMENT */
+    --rose-light: #F4A6B8;         /* Rose très clair */
+    
+    /* Couleurs secondaires et d'accent */
+    --secondary-color: #4ECDC4;    /* Turquoise menthe */
+    --accent-color: #FFD93D;       /* Jaune dorée */
+    --accent-light: #FFF9E6;
     
     /* Couleurs neutres */
     --text-color: #2D3436;
