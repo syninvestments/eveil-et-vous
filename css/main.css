@@ -135,7 +135,8 @@ header {
 }
 
 .logo img {
-    height: 50px;
+    height: 70px !important;
+    width: auto !important;
 }
 
 nav ul {
